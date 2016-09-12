@@ -1,0 +1,30 @@
+<div>
+	<md-input-container style="line-height: 75px">
+		<label>Travel Computer</label>
+		<input [(ngModel)]="filterText" type="text" class="{{filterBoxClass}}"/>
+	</md-input-container>
+	<br/>
+	<md-content>
+		<button md-button md-raised-button color="primary" (click)="exportProducts(filterText,membershipFilter)">
+			Export Products
+		</button>
+		<ul>
+			<li *ngFor="let product of productResults | GroupMembership:membershipFilter | TextSearch:filterText">
+				<div class="topLevelItem" [ngSwitch]="product.groupCount">
+					<span *ngSwitchCase="0">{{product.name
+						}} - {{product.productPlanName}}
+					</span>
+
+					<button *ngSwitchDefault
+							class="link-button"
+							(click)="onSelect(product.id)">
+						{{product.name}} - {{product.productPlanName}} - ({{product.groupCount}})
+					</button>
+				</div>
+				<div  *ngIf="productGroups && product.showGroups === true">
+					<group [groupList]="productGroups[product.id]"></group>
+				</div>
+			</li>
+		</ul>
+	</md-content>
+</div>

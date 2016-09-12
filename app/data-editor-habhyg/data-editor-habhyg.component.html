@@ -1,0 +1,18 @@
+<!--<button pButton type="text" (click)="ShowMessage()" label="Click"></button>-->
+<dialog-component></dialog-component>
+<div>
+	<div class="datagridwrapper">
+		<p-dataTable [value]="starData">
+            <!--<p-column field="id" header="ID"></p-column>-->
+			<p-column field="ProperName" header="Name"></p-column>
+			<p-column field="CommonName" header="Common"></p-column>
+			<p-column field="DistanceInParsecs" header="Distance"></p-column>
+			<p-column field="SpectralType" header="Type"></p-column>
+			<p-column>
+				 <template let-star="rowData" pTemplate type="body">
+					<button pButton type="button" (click)="onSelect(star)" label="Details"></button>
+				 </template>
+			</p-column>
+		</p-dataTable>
+	</div>
+</div>
