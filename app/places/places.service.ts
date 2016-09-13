@@ -10,8 +10,11 @@ import { PlaceType } from './place-type';
 export class PlacesService {
 
     private resourcePath: string = "/app/resources/";
+    private fileNameTemplate:string = "places-{0}.json"
 
-    constructor(private http:Http) { }
+    constructor(private http:Http) {
+
+     }
 
     public getPlaceTypes():Observable<PlaceType[]> {
         var fileName = this.resourcePath + "place-types.json";
@@ -20,16 +23,24 @@ export class PlacesService {
         .catch(this.handleError);
     }
 
-    /**
-    * 
-    */
-    // public get():Observable<any> {
-    //     var fileName = this.resourcePath + "habhyg.json";
-	// 	return this.http.get(fileName)
-    //         .map(this.extractData)
-	// 		//.map((response: Response) => <any> response.json())
-    //         .catch(this.handleError);
-    // }
+    public getPlanets():Observable<Planet[]> {
+        return this.get("planets");
+    }
+
+    public getCities():Observable<City[]> {
+        return this.get("cities");
+    }
+
+    public getStations():Observable<Station[]> {
+        return this.get("stations");
+    }
+
+    private get(placeTypeNamePluralized:string):Observable<Place[]> {
+        placeTypeNamePluralized = placeTypeNamePluralized.toLocaleLowerCase();
+        let placeTypeFileName = this.fileNameTemplate.replace("{0}", placeTypeNamePluralized);
+        let fullFileName = this.resourcePath + placeTypeFileName;
+        return this.http.get(fullFileName).map(this.extractData);
+    }
 
     private extractData(res: Response) {
         let body = res.json();

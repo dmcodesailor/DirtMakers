@@ -1,7 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { FirstComponent } from './components/first.component';
 import { enableProdMode } from '@angular/core';
 import { DataEditorHabHygComponent } from './data-editor-habhyg/data-editor-habhyg.component';
 import { HabHygService } from './shared/services/habhyg.service';

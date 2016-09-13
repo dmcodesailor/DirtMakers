@@ -26,21 +26,15 @@ export class HabHygDetailComponent extends BaseComponent  {
                 , private router: Router
                 , private service: HabHygService) { 
         super();
-        console.log("new");
     }
 
     ngOnInit() {
-        console.log("ngOnInit");
         this.sub = this.route.params.subscribe(params => {
             let id = +params['id']; // (+) converts string 'id' to a number
-            console.log(id);
-            // this.star = this.service.getItem(id);
             this.service.getItem(id).subscribe((data:StarData[]) => { 
-                                                    console.log ("checking " + data.length + " items");
-                                                    let selectedStar:StarData = data.find((v:StarData, i:number) => v.id == id);
-                                                    console.log(selectedStar);
-                                                    this.star = selectedStar; 
-                                                });            
+                                        let selectedStar:StarData = data.find((v:StarData, i:number) => v.id == id);
+                                        this.star = selectedStar; 
+                                    });            
             // .toPromise().then((sd:StarData) => {
             //     console.log(sd);
             //     // this.star = sd;

@@ -1,14 +1,17 @@
 [
   {
-    "Name": "Planets"
+    "Name": "Planet"
+    , "Pluralized": "Planets"
     , "Description": "Planets in dis story ya heard?"
   }
   , {
-    "Name": "Cities"
+    "Name": "City"
+    , "Pluralized": "Cities"
     , "Description": "Specific cities on given planets in the story."
   }
   , {
-    "Name": "Stations"
+    "Name": "Station"
+    , "Pluralized": "Stations"
     , "Description": "There are many space stations in the story. Some are connected to planets via space elevator/tether, some orbit planets, and a few are stand-alone in the deep."
   }
 ]
