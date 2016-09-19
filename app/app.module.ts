@@ -9,6 +9,8 @@ import { RouteNotFoundComponent } from './shared/components/route-not-found.comp
 import { HabHygDetailComponent } from '../app/habhyg-detail/habhyg-detail.component';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { PlacesModule } from '../app/places/places.module';
+import { BclModule } from '../app/bcl/bcl.module';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   imports:[ 
@@ -16,6 +18,7 @@ import { PlacesModule } from '../app/places/places.module';
             , DataTableModule
             , routing
             , PlacesModule
+            , BclModule
           ]
   , declarations: [
                   AppComponent
@@ -23,6 +26,7 @@ import { PlacesModule } from '../app/places/places.module';
                   , LandingPageComponent
                   , RouteNotFoundComponent
                   , HabHygDetailComponent
+                  , LoginComponent
                   ]
   , providers:  [
                 appRoutingProviders

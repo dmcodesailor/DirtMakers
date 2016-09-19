@@ -2,14 +2,15 @@
 <html>
 <head>
     <!--Change this if you are not running your application on the root-->
-    <script>document.write('<base href="' + document.location + '" />');</script>
+    <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
+    <base href="/"/>
     <title>Dirt Makers</title>
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="/content/Site.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/content/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/primeui/primeui-ng-all.min.css" />
-    <link rel="stylesheet" type="text/css" href="/node_modules/primeui/themes/trontastic/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeui/themes/eggplant/theme.css" />
     <!-- Polyfill for older browsers -->
     <script src="/node_modules/core-js/client/shim.min.js"></script>
     <script src="/node_modules/zone.js/dist/zone.js"></script>
@@ -19,6 +20,7 @@
     <script src="system.config.js"></script>
 </head>
 <body>
+    <div class="container">
 <script>
 		System.import('system.config.js').then(function () {
 			System.import('rxjs').then(function() {
@@ -32,5 +34,6 @@
 	</script>
     <!--<habhyg-data></habhyg-data>-->
     <dm-app>Working on it...</dm-app>
+    </div>
 </body>
 </html>

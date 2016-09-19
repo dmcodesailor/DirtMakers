@@ -1,0 +1,79 @@
+<div class="ui-g">
+    <div class="ui-g-2">
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Places" [selected]="true">
+                <a class="link-button" routerLink="places" routerLinkActive="active">Planets</a>
+                <br/><br/>
+                <a class="link-button" routerLink="cities" routerLinkActive="active">Cities</a>
+                <br/><br/>
+                <a class="link-button" routerLink="stations" routerLinkActive="active">Stations</a>
+            </p-accordionTab>
+            <p-accordionTab header="People" [selected]="true">
+                lorem ipsum dolor sit amet
+            </p-accordionTab>
+            <p-accordionTab header="Organizations" [selected]="true">
+                <a class="link-button" routerLink="places" routerLinkActive="active">Places</a>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <div class="ui-g-5">
+        <p-dataTable [value]="planets">
+            <p-column field="Name" header="Planets"></p-column>
+            <p-column class="col-button">
+                <template let-car="rowData" pTemplate type="body">
+                    <button type="button" pButton (click)="selectCar(car)" icon="fa-search">Edit</button>
+                </template>
+            </p-column>
+        </p-dataTable>
+    </div>
+    <div class="ui-g-5">
+        <div class="dm-form" [ngSwitch]="loading" >
+            <div class="ui-g" *ngSwitchCase="false">
+                <div class="ui-g-12">
+                    <input type="text" pInputText placeholder="name" class="ui-inputtext ui-fluid dm-input"/>
+                </div>
+                <div class="ui-g-12">
+                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea" placeholder="description"></textarea>
+                </div>
+                <div class="ui-g-12">
+                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea-large" placeholder="description"></textarea>
+                </div>
+                <div class="ui-g-12">
+                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea-small" placeholder="summary"></textarea>
+                </div>
+                <div class="ui-g-12">
+                    <label>Affiliation:</label>&nbsp;<p-dropdown [options]="affiliations" [(ngModel)]="selectedAffiliation"></p-dropdown>
+                </div>
+                <div class="ui-g-12">
+                    <div style="text-align:right;">
+                        <button type="button" pButton >Save</button>
+                    </div>
+                </div>
+  
+                <!--<h2>HEROES</h2>
+  <div *ngIf="hero">
+    <h3>"{{hero.name}}"</h3>
+    <div>
+      <label>Id: </label>{{hero.id}}</div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </div>
+    <p>
+      <button (click)="gotoHeroes()">Back</button>
+    </p>
+  </div>
+  -->
+                <!--<div class="ui-g-3">
+                    Label
+                </div>
+                <div class="ui-g-9">
+                    Input
+                </div>-->
+            </div>
+            <div class="ui-g-12" *ngSwitchCase="true">
+                <loading-indicator></loading-indicator>
+            </div>
+        </div>
+    </div>
+</div>

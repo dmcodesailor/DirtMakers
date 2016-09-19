@@ -1,0 +1,22 @@
+<div class="ui-g">
+    <div class="ui-g-3">
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Places" [selected]="true">
+                <a class="link-button" routerLink="places" routerLinkActive="active">Planets</a>
+                <br/><br/>
+                <a class="link-button" routerLink="cities" routerLinkActive="active">Cities</a>
+                <br/><br/>
+                <a class="link-button" routerLink="stations" routerLinkActive="active">Stations</a>
+            </p-accordionTab>
+            <p-accordionTab header="People" [selected]="true">
+                lorem ipsum dolor sit amet
+            </p-accordionTab>
+            <p-accordionTab header="Organizations" [selected]="true">
+                <a class="link-button" routerLink="places" routerLinkActive="active">Places</a>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+    <div class="ui-g-9">
+        <router-outlet>Pick sumptin...</router-outlet>
+    </div>
+</div>

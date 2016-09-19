@@ -2194,20 +2194,24 @@
   clip: auto;
 }
 h1 {
-  color: #369;
+  /*color: #369;*/
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
-body {
+/*html {
+  height: 100%;
+}*/
+html, body {
   margin: 2em;
   width: 90%;
   margin: auto;
   position: relative;
-  background-color: darkgray;
-}
+  background-color: #372a1e;
+  height: 100%;
+}.container { height: 100%;}
 /* BCL 09/02/2016 - Updated Styles */
 .main-navigation {
-  background-color: lightgoldenrodyellow;
+  background-color: #398021; /*53549b*/
   height: 75px;
 }
 .main-nav-title {
@@ -2255,13 +2259,36 @@ body {
 }
 .breadcrumbs {
   clear: both;
+  color: #d6c3b2;
+  padding: 5px;
+}
+.notifications {
+  clear: both;
+  color: #d6c3b2;
+  padding: 5px;
+  text-align: right;
+}
+.dm-input {
+  width: 100%;
+}
+.dm-input-textarea-large {
+  height: 10em;
+}
+.dm-input-textarea-small {
+  height: 4em;
+}
+.dm-label {
+  color: #FFFFFF;
+  font: bold;
+  font-size: larger;
 }
 /* BCL 01/21/2016 - General Site Styles */
 .body-background {
-  background-color: #3F3F3F;
+  background-color: #372a1e;
 }
 .body-foreground {
-  background-color: #FFFFFF;
+  background-color: #d6c3b2;
+  padding: 10px;
 }
 .body-content > md-content {
   margin: 40px 200px;
@@ -2431,8 +2458,8 @@ ul {
   padding: 0!important;
   font: inherit;
   /*border is optional*/
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
-  color: #000099;
+  color: #c4a990;
   text-align: left;
 }
