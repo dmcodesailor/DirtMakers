@@ -20,33 +20,31 @@
         <p-dataTable [value]="planets">
             <p-column field="Name" header="Planets"></p-column>
             <p-column class="col-button">
-                <template let-car="rowData" pTemplate type="body">
-                    <button type="button" pButton (click)="selectCar(car)" icon="fa-search">Edit</button>
+                <template let-planet="rowData" pTemplate type="body">
+                    <button type="button" pButton (click)="selectPlace(planet)" icon="fa-search">Edit</button>
                 </template>
             </p-column>
         </p-dataTable>
     </div>
     <div class="ui-g-5">
-        <div class="dm-form" [ngSwitch]="loading" >
+        <div class="dm-form" *ngIf="selectedPlace" [ngSwitch]="loading" >
             <div class="ui-g" *ngSwitchCase="false">
                 <div class="ui-g-12">
-                    <input type="text" pInputText placeholder="name" class="ui-inputtext ui-fluid dm-input"/>
+                    <md-input placeholder="First name" [(ngModel)]="selectedPlace.Name"></md-input>
+                    <input type="text" pInputText placeholder="name" class="ui-inputtext ui-fluid dm-input" [(ngModel)]="selectedPlace.Name"/>
                 </div>
                 <div class="ui-g-12">
-                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea" placeholder="description"></textarea>
+                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea" placeholder="description" [(ngModel)]="selectedPlace.Name"></textarea>
                 </div>
                 <div class="ui-g-12">
-                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea-large" placeholder="description"></textarea>
-                </div>
-                <div class="ui-g-12">
-                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea-small" placeholder="summary"></textarea>
+                    <textarea pInputTextarea class="ui-inputtextarea ui-fluid dm-input dm-input-textarea-small" placeholder="summary" [(ngModel)]="selectedPlace.Summary"></textarea>
                 </div>
                 <div class="ui-g-12">
                     <label>Affiliation:</label>&nbsp;<p-dropdown [options]="affiliations" [(ngModel)]="selectedAffiliation"></p-dropdown>
                 </div>
                 <div class="ui-g-12">
                     <div style="text-align:right;">
-                        <button type="button" pButton >Save</button>
+                        <button type="button" md-raised-button color="primary">Save</button>
                     </div>
                 </div>
   
@@ -72,7 +70,10 @@
                 </div>-->
             </div>
             <div class="ui-g-12" *ngSwitchCase="true">
-                <loading-indicator></loading-indicator>
+                <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
+                <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+                <md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
+                <!--<loading-indicator></loading-indicator>-->
             </div>
         </div>
     </div>

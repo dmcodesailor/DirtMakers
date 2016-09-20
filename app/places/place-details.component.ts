@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterConfig, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from '../../node_modules/rxjs';
 import { BaseComponent } from '../shared/components/base.component';
 import { PlacesModule } from './places.module';

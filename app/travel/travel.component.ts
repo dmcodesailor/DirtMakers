@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
+import {MdButtonModule} from '@angular2-material/button';
 import { DistanceConvert } from '../shared/utilities/DistanceConvert';
 import { HabHygService } from '../shared/services/habhyg.service';
 import { StarData } from '../shared/models/star.data';
@@ -10,7 +10,7 @@ import { DirtMakerStarData } from '../shared/models/dirt.maker.star.data';
 @Component({
     selector: 'travel-computer'
     , templateUrl: 'app/travel/travel.component.html'
-    , directives: [MD_BUTTON_DIRECTIVES]
+    // , directives: [MdButtonModule]
 })
 export class TravelComponent implements OnInit {
     

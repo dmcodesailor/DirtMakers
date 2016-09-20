@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { NgModule,ElementRef,AfterViewInit,AfterViewChecked,DoCheck,OnDestroy,Input,Output,IterableDiffers,TemplateRef,ContentChild,Renderer} from '@angular/core';
 import { CommonModule} from '@angular/common';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MdButtonModule } from '@angular2-material/button';
 import { Observable } from '../../node_modules/rxjs';
 
 import { DataGrid, Column, CarouselModule } from '../../node_modules/primeng/primeng';
@@ -21,7 +21,7 @@ import { PlacesService } from './places.service';
 @Component({
     selector: 'dm-places'
     , templateUrl: 'app/places/places.component.html'
-    , directives: [Carousel, DataList]
+    // , directives: [Carousel, DataList]
     , providers: [PlacesService]
 })
 export class PlacesComponent extends BaseComponent {

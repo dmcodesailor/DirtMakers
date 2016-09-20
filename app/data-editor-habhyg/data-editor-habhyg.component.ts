@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HabHygService } from '../shared/services/habhyg.service';
 import { StarData } from '../shared/models/star.data';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MdButtonModule } from '@angular2-material/button';
 import { DataTable } from '../../node_modules/primeng/primeng';
 import { Observable } from '../../node_modules/rxjs';
 import { Column } from '../../node_modules/primeng/primeng';
@@ -9,13 +9,13 @@ import { Button } from '../../node_modules/primeng/primeng';
 import { Dialog } from '../../node_modules/primeng/primeng';
 import { BaseComponent } from '../shared/components/base.component';
 import { DialogComponent } from '../shared/components/dialog.component';
-import { Router, RouterConfig } from '@angular/router';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/primeng';
 
 @Component({
     selector: 'habhyg-data',
     templateUrl: 'app/data-editor-habhyg/data-editor-habhyg.component.html'
-    , directives: [MD_BUTTON_DIRECTIVES, DataTable, Column, Button, Dialog, DialogComponent]
+    // , directives: [MdButtonModule, DataTable, Column, Button, Dialog, DialogComponent]
     , providers: [HabHygService, StarData]
 })
 export class DataEditorHabHygComponent extends BaseComponent {

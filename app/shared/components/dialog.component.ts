@@ -3,9 +3,9 @@ import { Button } from '../../../node_modules/primeng/primeng';
 import { Dialog } from '../../../node_modules/primeng/primeng';
 
 @Component({
-    templateUrl: 'app/shared/components/dialog.component.html'
-    , directives: [Button, Dialog]
-    , selector: 'dialog-component'
+    selector: 'dialog-component'
+    , templateUrl: 'app/shared/components/dialog.component.html'
+    // , directives: [Button, Dialog]
 })
 export class DialogComponent implements OnInit {
     public display:boolean = false;

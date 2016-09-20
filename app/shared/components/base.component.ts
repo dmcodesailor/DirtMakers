@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MdButtonModule } from '@angular2-material/button';
 import { Button } from '../../../node_modules/primeng/primeng';
 import { Dialog } from '../../../node_modules/primeng/primeng';
 import { DialogComponent } from '../../shared/components/dialog.component';

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1
+    , "Name": "Federation"
+    , "Description": ""
+  }
+  , {
+    "id": 2
+    , "Name": "Alliance"
+    , "Description": ""
+  }
+  , {
+    "id": 3
+    , "Name": "Gulu Farxad Adag"
+    , "Description": ""
+  }
+  , {
+    "id": 4
+    , "Name": "Independent"
+    , "Description": ""
+  }
+  , {
+    "id": 5
+    , "Name": "Democratic Monarchy of Nihon-Koku"
+    , "Description": ""
+  }
+  , {
+    "id": 6
+    , "Name": "Expansion"
+    , "Description": ""
+  }
+]

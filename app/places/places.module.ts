@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
+import { Http } from '@angular/http';
 // import { routing, appRoutingProviders } from '../app.routing';
 import { PlacesComponent }   from './places.component';
 import { PlaceDetailsComponent } from './place-details.component';
@@ -28,7 +28,7 @@ import { DataListModule, DataList } from '../../node_modules/primeng/primeng';
             , PlaceDetailsComponent
         ],
     providers: [
-            HTTP_PROVIDERS
+            Http
             , PlacesService
         ],
 })

@@ -1,15 +1,18 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 import { enableProdMode } from '@angular/core';
+// import { ModuleWithProviders } from '@angular/core';
+
 import { DataEditorHabHygComponent } from './data-editor-habhyg/data-editor-habhyg.component';
 import { HabHygService } from './shared/services/habhyg.service';
 import { BaseComponent } from './shared/components/base.component';
-// import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { AppModule } from './app.module';
 import { RouteNotFoundComponent } from './shared/components/route-not-found.component';
 import { StarData } from './shared/models/star.data';
 import { HabHygDetailComponent } from './habhyg-detail/habhyg-detail.component';
+
+// import { bootstrap } from '@angular/platform-browser-dynamic';
+// import { FormsModule } from '@angular/forms';
+// import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 
 enableProdMode();
 
@@ -17,7 +20,7 @@ enableProdMode();
 //     ,[
 //         , DataEditorHabHygComponent
 //         , HabHygService
-//         , HTTP_PROVIDERS
+//         , Http
 //         , disableDeprecatedForms()
 //     	, provideForms()
 //     ])
@@ -27,12 +30,13 @@ enableProdMode();
  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
  platformBrowserDynamic().bootstrapModule(AppModule
  ,[
+    //  FormsModule
         DataEditorHabHygComponent
-        // , {providers: [HTTP_PROVIDERS]}
+        // , {providers: [Http]}
         , HabHygService
-        , HTTP_PROVIDERS
-        , disableDeprecatedForms()
-    	, provideForms()
+        // , HttpModule
+        // , disableDeprecatedForms
+    	// , provideForms
         , HabHygDetailComponent
         , RouteNotFoundComponent
     ]);

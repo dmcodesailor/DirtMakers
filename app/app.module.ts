@@ -7,10 +7,11 @@ import { AppComponent } from '../app/app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { RouteNotFoundComponent } from './shared/components/route-not-found.component';
 import { HabHygDetailComponent } from '../app/habhyg-detail/habhyg-detail.component';
-import { HTTP_PROVIDERS } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { PlacesModule } from '../app/places/places.module';
 import { BclModule } from '../app/bcl/bcl.module';
 import { LoginComponent } from './login.component';
+import { DialogComponent } from './shared/components/dialog.component';
 
 @NgModule({
   imports:[ 
@@ -30,7 +31,7 @@ import { LoginComponent } from './login.component';
                   ]
   , providers:  [
                 appRoutingProviders
-                , HTTP_PROVIDERS
+                // , HttpModule
                 ]
   , bootstrap:  [ AppComponent ]
 })

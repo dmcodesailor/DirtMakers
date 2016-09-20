@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BaseComponent } from '../shared/components/base.component';
 import { HabHygService } from '../shared/services/habhyg.service';
 import { StarData } from '../shared/models/star.data';
-import { Router, RouterConfig, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from '../../node_modules/rxjs';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MdButtonModule } from '@angular2-material/button';
 import { DataTable } from '../../node_modules/primeng/primeng';
 import { Column } from '../../node_modules/primeng/primeng';
 import { Button } from '../../node_modules/primeng/primeng';
@@ -15,7 +15,7 @@ import { ButtonModule } from 'primeng/primeng';
 @Component({
     selector: 'dm-habhyg-detail',
     templateUrl: 'app/habhyg-detail/habhyg-detail.component.html'
-    , directives: [MD_BUTTON_DIRECTIVES, DataTable, Column, Button, Dialog, DialogComponent]
+    // , directives: [MdButtonModule, DataTable, Column, Button, Dialog, DialogComponent]
     , providers: [HabHygService]
 })
 export class HabHygDetailComponent extends BaseComponent  {
