@@ -1,5 +1,5 @@
 @import "../node_modules/primeui/primeui-ng-all.min.css";
-@import "../node_modules/primeui/themes/omega/theme.css";
+@import "../node_modules/primeui/themes/eggplant/theme.css";
 /*!
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2193,6 +2193,8 @@
   overflow: visible;
   clip: auto;
 }
+/****************************************
+*/
 h1 {
   /*color: #369;*/
   font-family: Arial, Helvetica, sans-serif;
@@ -2206,12 +2208,14 @@ html, body {
   width: 90%;
   margin: auto;
   position: relative;
-  background-color: #372a1e;
-  height: 100%;
-}.container { height: 100%;}
+  background-color: #312e33;
+  height: 80%;
+}
+
+.container { height: 100%;}
 /* BCL 09/02/2016 - Updated Styles */
 .main-navigation {
-  background-color: #398021; /*53549b*/
+  background-color: #7e7783; /*53549b*/
   height: 75px;
 }
 .main-nav-title {
@@ -2259,12 +2263,12 @@ html, body {
 }
 .breadcrumbs {
   clear: both;
-  color: #d6c3b2;
+  color: #7c8377;
   padding: 5px;
 }
 .notifications {
   clear: both;
-  color: #d6c3b2;
+  color: #7c8377;
   padding: 5px;
   text-align: right;
 }
@@ -2290,10 +2294,13 @@ html, body {
   background-color: #d6c3b2;
   padding: 10px;
 }
-.body-content > md-content {
-  margin: 40px 200px;
-  clear: both;
+.body-content {
+  /*margin: 40px 200px;*/
+  /*clear: both;*/
+  background-color: #cac7cc;
 }
+/*******************************************
+*/
 .staticTabs md-tab-content {
   padding: 25px;
   background-color: #ccffff;
@@ -2460,6 +2467,6 @@ ul {
   /*border is optional*/
   text-decoration: none;
   cursor: pointer;
-  color: #c4a990;
+  color: #372a1e;
   text-align: left;
 }

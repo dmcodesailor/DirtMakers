@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AccordionModule} from 'primeng/primeng';
+// import {AccordionModule} from 'primeng/primeng';
 
 @Component({
     templateUrl: 'app/bcl/bcl.component.html'

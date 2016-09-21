@@ -14,6 +14,7 @@ const bclRoutes: Routes = [
     { path: '', children: [
         { path: 'bcl', component: BclComponent }
         , { path: 'places', component: BclPlacesComponent }
+        , { path: 'places/:id', component: BclPlacesComponent }
         // , { path: 'characters', component: BclCharactersComponent }
         // , { path: 'vessels', component: BclVesselsComponent }
         // , { path: 'organizations', component: BclOrgsComponent }

@@ -1,4 +1,4 @@
-<div class="ui-g">
+<div class="ui-g body-content">
     <div class="ui-g-2">
         <p-accordion [multiple]="true">
             <p-accordionTab header="Places" [selected]="true">
@@ -16,17 +16,21 @@
             </p-accordionTab>
         </p-accordion>
     </div>
-    <div class="ui-g-5">
+    <div class="ui-g-3">
         <p-dataTable [value]="planets">
-            <p-column field="Name" header="Planets"></p-column>
-            <p-column class="col-button">
+            <p-column field="Name" header="Planets" (click)="selectPlace(planet)">
+                <template let-planet="rowData" pTemplate type="body">
+                    <a class="link-button" (click)="selectPlace(planet)">{{planet.Name}}</a>                
+                </template>
+            </p-column>
+            <!--<p-column class="col-button">
                 <template let-planet="rowData" pTemplate type="body">
                     <button type="button" pButton (click)="selectPlace(planet)" icon="fa-search">Edit</button>
                 </template>
-            </p-column>
+            </p-column>-->
         </p-dataTable>
     </div>
-    <div class="ui-g-5">
+    <div class="ui-g-7">
         <div class="dm-form" *ngIf="selectedPlace" [ngSwitch]="loading" >
             <div class="ui-g" *ngSwitchCase="false">
                 <div class="ui-g-12">

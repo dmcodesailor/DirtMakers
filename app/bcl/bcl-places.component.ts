@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { DataListModule } from '../../node_modules/primeng/primeng';
 import { DataList } from '../../node_modules/primeng/primeng';
@@ -42,6 +43,8 @@ import { Place, Planet, City, Station } from '../places/place';
 import { PlaceType } from '../places/place-type';
 import { PlacesService } from '../places/places.service';
 
+import { DmSharedModule } from '../shared/dm-shared.module';
+
 @Component({
     selector: 'dm-bcl-places',
     templateUrl: 'app/bcl/bcl-places.component.html'
@@ -57,13 +60,17 @@ export class BclPlacesComponent extends BaseComponent implements OnInit {
     public selectedPlace:Place;
     public loading:boolean = true;
 
-    constructor(private placesService:PlacesService) {
+    constructor(private route:ActivatedRoute
+                , private router:Router
+                , private placesService:PlacesService) {
         super();
      }
     ngOnInit() {
         this.loadPlanets();
         this.loadAffiliations();
+        this.selectPlaceFromRoute();
      }
+
     private loadPlanets() {
         this.placesService.getPlanets().toPromise().then((places:Place[]) => {
             this.planets = places; 
@@ -78,6 +85,14 @@ export class BclPlacesComponent extends BaseComponent implements OnInit {
         this.affiliations.push({label: 'Gulu Farxad Adag', value: "Gulu Farxad Adag"});
         this.affiliations.push({label: 'Independent', value: "Independent"});
         this.affiliations.push({label: 'Nihon-Koku', value: "Nihon-Koku"});
+    }
+
+    private selectPlaceFromRoute() {
+         this.route.params.forEach((params: Params) => {
+            let id = +params['id']; // (+) converts string 'id' to a number
+            let place:Place = this.planets.find(p => p.id == id);
+            this.selectPlace(place);
+        });
     }
 
     private selectPlace(place:Place) {

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 
-import { AccordionModule }          from 'primeng/primeng';
+// import { AccordionModule }          from 'primeng/primeng';
 import { DataListModule }           from '../../node_modules/primeng/primeng';
 import { DataList }                 from '../../node_modules/primeng/primeng';
 import { SharedModule }             from '../../node_modules/primeng/primeng';
@@ -18,28 +18,35 @@ import { MdProgressCircleModule }   from '../../node_modules/@angular2-material/
 import { MdButtonModule }           from '../../node_modules/@angular2-material/button';
 import { DialogComponent }          from '../shared/components/dialog.component';
 
-import { bclRouting }           from './bcl.routing';
-import { BclComponent }         from './bcl.component';
-import { BclPlacesComponent }   from './bcl-places.component';
+import { bclRouting }               from './bcl.routing';
+import { BclComponent }             from './bcl.component';
+import { BclPlacesComponent }       from './bcl-places.component';
+import { DmSharedModule }           from '../shared/dm-shared.module';
+import { PlacesService }            from'../places/places.service';
 
 @NgModule({
     imports: [
-        AccordionModule
-        , DataListModule
+        // AccordionModule
+        DataListModule
         , DataTableModule
-        , CommonModule
+        // , CommonModule
         , InputTextModule
         , InputTextareaModule
         , DropdownModule
-        , FormsModule
+        // , FormsModule
         , MdInputModule
         , MdProgressCircleModule
         , MdButtonModule
         , bclRouting
-        , HttpModule
+        // , HttpModule
+        , DmSharedModule
     ],
-    exports: [],
+    exports: [
+        DmSharedModule
+    ],
     declarations: [BclComponent, BclPlacesComponent],
-    providers: [],
+    providers: [
+        PlacesService
+    ],
 })
 export class BclModule { }

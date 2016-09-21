@@ -16,6 +16,7 @@ import { ButtonModule } from 'primeng/primeng';
     selector: 'dm-habhyg-detail',
     templateUrl: 'app/habhyg-detail/habhyg-detail.component.html'
     // , directives: [MdButtonModule, DataTable, Column, Button, Dialog, DialogComponent]
+    // , directives: [ DialogComponent ]
     , providers: [HabHygService]
 })
 export class HabHygDetailComponent extends BaseComponent  {
