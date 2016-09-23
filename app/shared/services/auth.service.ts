@@ -7,6 +7,8 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import { Account }                  from '../models/account';
 
+// referenced the following for this: https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.x4391hmxd
+
 @Injectable()
 export class AuthService {
   isLoggedIn: boolean = false;

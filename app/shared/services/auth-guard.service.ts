@@ -8,6 +8,8 @@ import { CanActivate
          , Route }                  from '@angular/router';
 import { AuthService }              from './auth.service';
 
+// referenced the following for this: https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.x4391hmxd
+
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(private authService: AuthService

@@ -2216,12 +2216,10 @@ html, body {
 /* BCL 09/02/2016 - Updated Styles */
 .main-navigation {
   background-color: #7e7783; /*53549b*/
-  height: 75px;
+  /*height: 75px;*/
 }
 .main-nav-title {
-  float: left;
-  position: absolute;
-  width: 20%;
+  font-size: xx-large;
 }
 .all-nav {
   position: relative;
@@ -2243,31 +2241,37 @@ html, body {
   position: absolute;
   clear: both;
 }
+.primary-nav {
+  width: 100%;
+}
 .primary-nav-item {
-  color: #996633;
-  width: 20%;
-  float: left;
   font-size: x-large;
   text-align: center;
+  float: left;
 }
 .main-nav-secondary {
   width: 20%;
   float: right;
 }
+.secondary-nav {
+  float:right;
+  width: 100%;
+}
 .secondary-nav-item {
-  color:#993399;
-  width: 33%;
+  color:#312e33;
+  width: 20%;
   float: right;
-  font-size: large;
+  font-size: x-small;
   text-align: center;
 }
+.notification-bar {
+  background-color: #b1acb4;
+}
 .breadcrumbs {
-  clear: both;
   color: #7c8377;
   padding: 5px;
 }
 .notifications {
-  clear: both;
   color: #7c8377;
   padding: 5px;
   text-align: right;

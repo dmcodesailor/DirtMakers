@@ -1,49 +1,53 @@
-<div class="main-navigation">
-    <div class="main-nav-title">
-        <a  class="link-button" routerLink="/" routerLinkActive="active"><i><h1>Dirt Makers</h1></i></a>
+<div class="ui-g main-navigation">
+    <div class="ui-g-3 main-nav-title">
+        <a  class="link-button" routerLink="/" routerLinkActive="active">Dirt Makers</a>
     </div>
-    <div class="all-nav">
-        <div class="top-nav">
-            <div class="main-nav-secondary">
-                <div class="secondary-nav-item">
-                    <a class="link-button" routerLink="/about" routerLinkActive="active">About</a>
-                </div>
-                <div class="secondary-nav-item">
-                    <a class="link-button"  routerLink="news" routerLinkActive="active">News</a>
-                </div>
-                <div class="secondary-nav-item">
-                    <a class="link-button"  routerLink="contact" routerLinkActive="active">Contact</a>
-                </div>
-                <div class="secondary-nav-item">
-                    <a class="link-button" routerLink="/bcl" routerLinkActive="active">Admin</a>
-                </div>
-                <div class="secondary-nav-item">
-                    <a class="link-button" (click)="logout()" *ngIf="authentic()" >Logout</a>
+    <div class="ui-g-9">
+        <div class="ui-g">
+            <div class="ui-g-7">
+                <div class="ui-g">
+                    <div class="primary-nav">
+                        <div class="primary-nav-item">
+                            <a md-button routerLink="/places" routerLinkActive="active">PLACES</a>
+                        </div>
+                        <div class="primary-nav-item">
+                            <a md-button routerLink="/characters" routerLinkActive="active">CHARACTERS</a>
+                        </div>
+                        <div class="primary-nav-item">
+                            <a md-button routerLink="/vessels" routerLinkActive="active">VESSELS</a>
+                        </div>
+                        <div class="primary-nav-item">
+                            <a md-button routerLink="/orgs" routerLinkActive="active">ORGANIZATIONS</a>
+                        </div>
+                        <div class="primary-nav-item">
+                            <a md-button routerLink="/habhyg" routerLinkActive="active">TOOLS</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="bottom-nav">
-            <div class="main-nav-primary">
-                <div class="primary-nav-item">
-                    <a class="link-button"  routerLink="/places" routerLinkActive="active">Places</a>
-                </div>
-                <div class="primary-nav-item">
-                    <a class="link-button"  routerLink="/characters" routerLinkActive="active">Characters</a>
-                </div>
-                <div class="primary-nav-item">
-                    <a class="link-button"  routerLink="/vessels" routerLinkActive="active">Vessels</a>
-                </div>
-                <div class="primary-nav-item">
-                    <a class="link-button"  routerLink="/orgs" routerLinkActive="active">Organizations</a>
-                </div>
-                <div class="primary-nav-item">
-                    <a class="link-button"  routerLink="/habhyg" routerLinkActive="active">Tools</a>
+            <div class="ui-g-5">
+                <div class="ui-g">
+                    <div class="secondary-nav">
+                        <div class="secondary-nav-item">
+                            <a md-button routerLink="/bcl" routerLinkActive="active" *ngIf="!authentic()">admin</a>
+                            <a md-button (click)="logout()" *ngIf="authentic()" >Logout</a>
+                        </div>
+                        <div class="secondary-nav-item">
+                            <a md-button routerLink="contact" routerLinkActive="active">contact</a>
+                        </div>
+                        <div class="secondary-nav-item">
+                            <a md-button routerLink="news" routerLinkActive="active">news</a>
+                        </div>
+                        <div class="secondary-nav-item">
+                            <a md-button routerLink="/about" routerLinkActive="active">about</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="ui-g">
+<div class="ui-g notification-bar">
     <div class="ui-g-6 breadcrumbs">
         insert -> breadcrumbs -> ...
     </div>
