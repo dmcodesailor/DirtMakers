@@ -3,12 +3,12 @@ import { BaseComponent } from '../shared/components/base.component';
 import { HabHygService } from '../shared/services/habhyg.service';
 import { StarData } from '../shared/models/star.data';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from '../../node_modules/rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { MdButtonModule } from '@angular2-material/button';
-import { DataTable } from '../../node_modules/primeng/primeng';
-import { Column } from '../../node_modules/primeng/primeng';
-import { Button } from '../../node_modules/primeng/primeng';
-import { Dialog } from '../../node_modules/primeng/primeng';
+import { DataTable } from 'primeng/primeng';
+import { Column } from 'primeng/primeng';
+import { Button } from 'primeng/primeng';
+import { Dialog } from 'primeng/primeng';
 import { DialogComponent } from '../shared/components/dialog.component';
 import { ButtonModule } from 'primeng/primeng';
 

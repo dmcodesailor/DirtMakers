@@ -5,13 +5,13 @@ import { PlacesComponent }   from './places.component';
 import { PlaceDetailsComponent } from './place-details.component';
 import { PlacesService } from './places.service';
 import { placesRouting } from './places.routing';
-import { DataGridModule, Column, CarouselModule } from '../../node_modules/primeng/primeng';
-import { DataTable } from '../../node_modules/primeng/primeng';
-import { Button } from '../../node_modules/primeng/primeng';
-import { Dialog } from '../../node_modules/primeng/primeng';
-import { DataTableModule } from '../../node_modules/primeng/primeng';
-import { SharedModule } from '../../node_modules/primeng/primeng';
-import { DataListModule, DataList } from '../../node_modules/primeng/primeng';
+import { DataGridModule, Column, CarouselModule } from 'primeng/primeng';
+import { DataTable } from 'primeng/primeng';
+import { Button } from 'primeng/primeng';
+import { Dialog } from 'primeng/primeng';
+import { DataTableModule } from 'primeng/primeng';
+import { SharedModule } from 'primeng/primeng';
+import { DataListModule, DataList } from 'primeng/primeng';
 
 @NgModule({
     imports: [

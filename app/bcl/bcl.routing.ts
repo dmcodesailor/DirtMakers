@@ -1,7 +1,9 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { BclComponent } from './bcl.component';
-import { BclPlacesComponent } from './bcl-places.component';
+import { ModuleWithProviders }      from '@angular/core';
+import { Routes, RouterModule }     from '@angular/router';
+import { BclComponent }             from './bcl.component';
+import { BclPlacesComponent }       from './bcl-places.component';
+import { AuthGuard }                from '../shared/services/auth-guard.service';
+
 // import { BclCharactersComponent } from './bcl-characters.component';
 // import { BclVesselsComponent } from './bcl-vessels.component';
 // import { BclOrgsComponent } from './bcl-orgs.component';
@@ -12,9 +14,9 @@ import { BclPlacesComponent } from './bcl-places.component';
 const bclRoutes: Routes = [
   // { path: 'bcl', redirectTo: '/bcl', pathMatch: 'full'}
     { path: '', children: [
-        { path: 'bcl', component: BclComponent }
+        { path: 'bcl', component: BclComponent, canActivate: [AuthGuard], }
         , { path: 'places', component: BclPlacesComponent }
-        , { path: 'places/:id', component: BclPlacesComponent }
+        // , { path: ':id', component: BclPlacesComponent }
         // , { path: 'characters', component: BclCharactersComponent }
         // , { path: 'vessels', component: BclVesselsComponent }
         // , { path: 'organizations', component: BclOrgsComponent }

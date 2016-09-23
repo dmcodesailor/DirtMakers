@@ -17,7 +17,7 @@
         </p-accordion>
     </div>
     <div class="ui-g-3">
-        <p-dataTable [value]="planets">
+        <p-dataTable [value]="planets" [(selection)]="selectedPlace">
             <p-column field="Name" header="Planets" (click)="selectPlace(planet)">
                 <template let-planet="rowData" pTemplate type="body">
                     <a class="link-button" (click)="selectPlace(planet)">{{planet.Name}}</a>                

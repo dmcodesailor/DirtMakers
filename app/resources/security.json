@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1
+    , "username": "a"
+    , "password": "a"
+    , "roles":[{"name":"a1"}
+                , {"name":"b2"}
+                , {"name":"c3"}
+                , {"name":"d4"}
+                , {"name":"e5"}
+                , {"name":"f6"}]
+  }
+  , {
+    "id": 2
+    , "username": "b"
+    , "password": "b"
+    , "roles":[{"name":"a1"}
+                , {"name":"b2"}
+                , {"name":"c3"}
+                , {"name":"d4"}
+                , {"name":"e5"}]
+  }
+  , {
+    "id": 3
+    , "username": "c"
+    , "password": "c"
+    , "roles":[{"name":"a1"}
+                , {"name":"b2"}
+                , {"name":"c3"}
+                , {"name":"d4"}]
+  }
+  , {
+    "id": 4
+    , "username": "d"
+    , "password": "d"
+    , "roles":[{"name":"a1"}
+                , {"name":"b2"}
+                , {"name":"c3"}]
+  }
+  , {
+    "id": 5
+    , "username": "e"
+    , "password": "e"
+    , "roles":[{"name":"a1"}
+                , {"name":"b2"}]
+  }
+  , {
+    "id": 6
+    , "username": "f"
+    , "password": "f"
+    , "roles":[{"name":"a1"}]
+  }
+]

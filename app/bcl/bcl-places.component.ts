@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit }                from '@angular/core';
+import { Router, ActivatedRoute, Params }   from '@angular/router';
 
-import { DataListModule } from '../../node_modules/primeng/primeng';
-import { DataList } from '../../node_modules/primeng/primeng';
-import { SharedModule } from '../../node_modules/primeng/primeng';
-import { DataTableModule } from '../../node_modules/primeng/primeng';
-import { DataGrid, Column } from '../../node_modules/primeng/primeng';
-import { InputTextModule } from '../../node_modules/primeng/primeng';
-import { InputTextareaModule } from '../../node_modules/primeng/primeng';
-import { DropdownModule, Dropdown } from '../../node_modules/primeng/primeng';
-import { SelectItem } from '../../node_modules/primeng/primeng';
+import { DataListModule }           from 'primeng/primeng';
+import { DataList }                 from 'primeng/primeng';
+import { SharedModule }             from 'primeng/primeng';
+import { DataTableModule }          from 'primeng/primeng';
+import { DataGrid, Column }         from 'primeng/primeng';
+import { InputTextModule }          from 'primeng/primeng';
+import { InputTextareaModule }      from 'primeng/primeng';
+import { DropdownModule }           from 'primeng/primeng';
+import { SelectItem }               from 'primeng/primeng';
 
 // import {MdButtonToggleModule} from '@angular2-material/button-toggle/button-toggle';
 import {MdButtonModule} from '@angular2-material/button/button';
@@ -26,7 +24,7 @@ import {MdButtonModule} from '@angular2-material/button/button';
 // import {MdIconModule} from '@angular2-material/icon/icon';
 import {MdProgressCircleModule} from '@angular2-material/progress-circle/progress-circle';
 // import {MdProgressBarModule} from '@angular2-material/progress-bar/progress-bar';
-import {MdInputModule} from '../../node_modules/@angular2-material/input/input';
+import {MdInputModule} from '@angular2-material/input/input';
 // import {MdTabsModule} from '@angular2-material/tabs/tabs';
 // import {MdToolbarModule} from '@angular2-material/toolbar/toolbar';
 // import {MdTooltipModule} from '@angular2-material/tooltip/tooltip';
@@ -38,19 +36,15 @@ import {MdInputModule} from '../../node_modules/@angular2-material/input/input';
 
 // import { LoadingIndicator, LoadingPage } from '../shared/components/loading-indicator/loading-indicator';
 
-import { BaseComponent } from '../shared/components/base.component';
+import { BaseComponent }                from '../shared/components/base.component';
 import { Place, Planet, City, Station } from '../places/place';
-import { PlaceType } from '../places/place-type';
-import { PlacesService } from '../places/places.service';
-
-import { DmSharedModule } from '../shared/dm-shared.module';
+import { PlaceType }                    from '../places/place-type';
+import { PlacesService }                from '../places/places.service';
+import { DmSharedModule }               from '../shared/dm-shared.module';
 
 @Component({
     selector: 'dm-bcl-places',
     templateUrl: 'app/bcl/bcl-places.component.html'
-    // , directives: [DataList, LoadingIndicator, Dropdown, Column,
-    // ]
-    // , providers: [PlacesService]
 })
 export class BclPlacesComponent extends BaseComponent implements OnInit {
 
@@ -68,17 +62,17 @@ export class BclPlacesComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.loadPlanets();
         this.loadAffiliations();
-        this.selectPlaceFromRoute();
      }
 
     private loadPlanets() {
         this.placesService.getPlanets().toPromise().then((places:Place[]) => {
             this.planets = places; 
             // this.loading = false;
+            this.selectPlaceFromRoute();
         });        
     }
     private loadAffiliations() {
-        this.affiliations.push({label: '--Select an Affiliation--', value: null});
+        this.affiliations.push({label: '-- Choose --', value: null});
         this.affiliations.push({label: 'Alliance', value: "Alliance"});
         this.affiliations.push({label: 'Expansion', value: "Expansion"});
         this.affiliations.push({label: 'Federation', value: "Federation"});

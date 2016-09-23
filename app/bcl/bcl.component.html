@@ -1,22 +1,26 @@
 <div class="ui-g">
     <div class="ui-g-3">
         <p-accordion [multiple]="true">
-            <p-accordionTab header="Places" [selected]="true">
-                <a class="link-button" routerLink="places" routerLinkActive="active">Planets</a>
+            <p-accordionTab header="Places" [selected]="true" [disabled]="true">
+                <a class="link-button" routerLink="/bcl/places" routerLinkActive="active">Planets</a>
                 <br/><br/>
                 <a class="link-button" routerLink="cities" routerLinkActive="active">Cities</a>
                 <br/><br/>
                 <a class="link-button" routerLink="stations" routerLinkActive="active">Stations</a>
             </p-accordionTab>
-            <p-accordionTab header="People" [selected]="true">
+            <p-accordionTab header="People" [selected]="true" [disabled]="true">
                 lorem ipsum dolor sit amet
             </p-accordionTab>
-            <p-accordionTab header="Organizations" [selected]="true">
-                <a class="link-button" routerLink="places" routerLinkActive="active">Places</a>
+            <p-accordionTab header="Organizations" [selected]="true" [disabled]="true">
+                <a class="link-button" routerLink="places" routerLinkActive="active">Governments</a>
+                <br/><br/>
+                <a class="link-button" routerLink="stations" routerLinkActive="active">Religions</a>
+                <br/><br/>
+                <a class="link-button" routerLink="stations" routerLinkActive="active">Other</a>
+            </p-accordionTab>
+            <p-accordionTab header="People" [selected]="true" [disabled]="true">
+                lorem ipsum dolor sit amet
             </p-accordionTab>
         </p-accordion>
-    </div>
-    <div class="ui-g-9">
-        <router-outlet>Pick sumptin...</router-outlet>
     </div>
 </div>

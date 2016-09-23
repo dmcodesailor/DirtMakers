@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from '../../node_modules/rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { BaseComponent } from '../shared/components/base.component';
 import { PlacesModule } from './places.module';
 import { Place } from './place';

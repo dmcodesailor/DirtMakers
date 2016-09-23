@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Button } from '../../../node_modules/primeng/primeng';
-import { Dialog } from '../../../node_modules/primeng/primeng';
+import { Button } from 'primeng/primeng';
+import { Dialog } from 'primeng/primeng';
 
 @Component({
     selector: 'dialog-component'

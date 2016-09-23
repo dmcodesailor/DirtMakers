@@ -17,6 +17,9 @@
                 <div class="secondary-nav-item">
                     <a class="link-button" routerLink="/bcl" routerLinkActive="active">Admin</a>
                 </div>
+                <div class="secondary-nav-item">
+                    <a class="link-button" (click)="logout()" *ngIf="authentic()" >Logout</a>
+                </div>
             </div>
         </div>
         <div class="bottom-nav">
