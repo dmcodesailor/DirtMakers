@@ -2,24 +2,33 @@
     <div class="ui-g-3">
         <p-accordion [multiple]="true">
             <p-accordionTab header="Places" [selected]="true" [disabled]="true">
-                <a class="link-button" routerLink="/bcl/places" routerLinkActive="active">Planets</a>
+                <a class="link-button" routerLink="/bcl/planets" routerLinkActive="active">Planets</a>
                 <br/><br/>
-                <a class="link-button" routerLink="cities" routerLinkActive="active">Cities</a>
+                <a class="link-button" routerLink="/bcl/cities" routerLinkActive="active">Cities</a>
                 <br/><br/>
-                <a class="link-button" routerLink="stations" routerLinkActive="active">Stations</a>
+                <a class="link-button" routerLink="/bcl/stations" routerLinkActive="active">Stations</a>
             </p-accordionTab>
-            <p-accordionTab header="People" [selected]="true" [disabled]="true">
-                lorem ipsum dolor sit amet
+            <p-accordionTab header="Characters" [selected]="true" [disabled]="true">
+                <a class="link-button" routerLink="/bcl/hept" routerLinkActive="active">Hept</a>
+                <br/><br/>
+                <a class="link-button" routerLink="/bcl/yahh" routerLinkActive="active">Yahh</a>
+            </p-accordionTab>
+            <p-accordionTab header="Vessels" [selected]="true" [disabled]="true">
+                <a class="link-button" routerLink="/bcl/mil" routerLinkActive="active">Military</a>
+                <br/><br/>
+                <a class="link-button" routerLink="/bcl/civ" routerLinkActive="active">Civilian</a>
             </p-accordionTab>
             <p-accordionTab header="Organizations" [selected]="true" [disabled]="true">
-                <a class="link-button" routerLink="places" routerLinkActive="active">Governments</a>
+                <a class="link-button" routerLink="/bcl/gov" routerLinkActive="active">Governments</a>
                 <br/><br/>
-                <a class="link-button" routerLink="stations" routerLinkActive="active">Religions</a>
+                <a class="link-button" routerLink="/bcl/theo" routerLinkActive="active">Religions</a>
                 <br/><br/>
-                <a class="link-button" routerLink="stations" routerLinkActive="active">Other</a>
+                <a class="link-button" routerLink="/bcl/other" routerLinkActive="active">Other</a>
             </p-accordionTab>
-            <p-accordionTab header="People" [selected]="true" [disabled]="true">
-                lorem ipsum dolor sit amet
+            <p-accordionTab header="Lookups" [selected]="true" [disabled]="true">
+                <a class="link-button" routerLink="/bcl/affiliations" routerLinkActive="active">Affiliations</a>
+                <br/><br/>
+                <a class="link-button" routerLink="/bcl/placetypes" routerLinkActive="active">Place Types</a>
             </p-accordionTab>
         </p-accordion>
     </div>

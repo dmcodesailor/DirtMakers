@@ -16,7 +16,8 @@ export class Planet extends Place {
 }
 
 export class City extends Place {
-    // public planet:Planet = new Planet();
+    public planet:Planet = new Planet();
+    public planetId:number;
     constructor () {
         super();
         this.Type = "City";
@@ -24,7 +25,8 @@ export class City extends Place {
 }
 
 export class Station extends Place {
-    // public planet:Planet = null;
+    public planet:Planet = null;
+    public planetId:number;
     constructor () {
         super();
         this.Type = "Station";

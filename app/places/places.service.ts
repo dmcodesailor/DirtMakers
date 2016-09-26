@@ -35,7 +35,7 @@ export class PlacesService {
         return this.get("stations");
     }
 
-    private get(placeTypeNamePluralized:string):Observable<Place[]> {
+    private get(placeTypeNamePluralized:string):Observable<any[]> {
         placeTypeNamePluralized = placeTypeNamePluralized.toLocaleLowerCase();
         let placeTypeFileName = this.fileNameTemplate.replace("{0}", placeTypeNamePluralized);
         let fullFileName = this.resourcePath + placeTypeFileName;

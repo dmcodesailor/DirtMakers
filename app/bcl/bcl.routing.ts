@@ -3,6 +3,7 @@ import { Routes, RouterModule }     from '@angular/router';
 import { BclComponent }             from './bcl.component';
 import { BclPlacesComponent }       from './bcl-places.component';
 import { AuthGuard }                from '../shared/services/auth-guard.service';
+import { BclAffiliationsComponent } from './bcl-affiliations.component';
 
 // import { BclCharactersComponent } from './bcl-characters.component';
 // import { BclVesselsComponent } from './bcl-vessels.component';
@@ -16,6 +17,7 @@ const bclRoutes: Routes = [
     { path: '', children: [
         { path: 'bcl', component: BclComponent, canActivate: [AuthGuard], }
         , { path: 'places', component: BclPlacesComponent }
+        , { path: 'affiliations', component: BclAffiliationsComponent }
         // , { path: ':id', component: BclPlacesComponent }
         // , { path: 'characters', component: BclCharactersComponent }
         // , { path: 'vessels', component: BclVesselsComponent }

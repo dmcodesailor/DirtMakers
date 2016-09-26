@@ -2,17 +2,20 @@
     <div class="ui-g-2">
         <p-accordion [multiple]="true">
             <p-accordionTab header="Places" [selected]="true">
-                <a class="link-button" routerLink="places" routerLinkActive="active">Planets</a>
+                <a class="link-button" routerLink="planets" routerLinkActive="active">Planets</a>
                 <br/><br/>
                 <a class="link-button" routerLink="cities" routerLinkActive="active">Cities</a>
                 <br/><br/>
                 <a class="link-button" routerLink="stations" routerLinkActive="active">Stations</a>
             </p-accordionTab>
+            <p-accordionTab header="Vessels" [selected]="true">
+                <a class="link-button" routerLink="vessels" routerLinkActive="active">Vessels</a>
+            </p-accordionTab>
             <p-accordionTab header="People" [selected]="true">
-                lorem ipsum dolor sit amet
+                <a class="link-button" routerLink="characters" routerLinkActive="active">Characters</a>
             </p-accordionTab>
             <p-accordionTab header="Organizations" [selected]="true">
-                <a class="link-button" routerLink="places" routerLinkActive="active">Places</a>
+                <a class="link-button" routerLink="orgs" routerLinkActive="active">Places</a>
             </p-accordionTab>
         </p-accordion>
     </div>
@@ -23,11 +26,6 @@
                     <a class="link-button" (click)="selectPlace(planet)">{{planet.Name}}</a>                
                 </template>
             </p-column>
-            <!--<p-column class="col-button">
-                <template let-planet="rowData" pTemplate type="body">
-                    <button type="button" pButton (click)="selectPlace(planet)" icon="fa-search">Edit</button>
-                </template>
-            </p-column>-->
         </p-dataTable>
     </div>
     <div class="ui-g-7">

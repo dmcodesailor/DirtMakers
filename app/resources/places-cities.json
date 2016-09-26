@@ -1,273 +1,35 @@
 [
   {
       "id": 1
-    , "Name": "Oasis"
+    , "Name": "Amadora Braga"
     , "Description": ""
     , "Summary": ""
-    , "HabHygId": 27
-    , "BookName": "Oasis, et.al."
+    , "HabHygId": -1
+    , "BookName": "Amadora Braga"
     , "Affiliation":"Independent" 
-    , "Type": "Planet" 
+    , "PlanetName": "Kathryn Segment"
+    , "PlanetId": 12
   },
   {
     "id": 2     
-    , "Name": "Crown"     
+    , "Name": "Kip's Bay"     
     , "Description": ""     
     , "Summary": ""
-    , "HabHygId": 576
-    , "BookName": "Crown"
-    ,"Affiliation":"Alliance" 
+    , "HabHygId": -1
+    , "BookName": "Kip's Bay"
+    , "Affiliation":"Alliance" 
+    , "PlanetName": "Kathryn Segment"
+    , "PlanetId": 12
   },
   {
     "id": 3     
-    , "Name": "Farxad Adag"     
+    , "Name": "Dyban"     
     , "Description": ""     
     , "Summary": ""
-    , "HabHygId": 662
-    , "BookName": "Farxad Adag"
-    ,"Affiliation":"Gulu Farxad Adag" 
-  },
-  {
-    "id": 4
-    , "Name": "Nihon-Koku"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 955
-    , "BookName": "Nihon-Koku"
-    ,"Affiliation":"Democratic Monarchy of Nihon-Koku" 
-  },
-  {
-    "id": 5     
-    , "Name": "Mizaru"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 965
-    , "BookName": "Mizaru"
-    ,"Affiliation":"Expansion" 
-  },
-  {
-    "id": 6     
-    , "Name": "Kikazaru"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 892
-    , "BookName": "Kikazaru"
-    ,"Affiliation":"Expansion" 
-  },
-  {
-    "id": 7     
-    , "Name": "Iwazaru"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 935
-    , "BookName": "Iwazaru"
-    ,"Affiliation":"Expansion" 
-  },
-  {
-    "id": 8     
-    , "Name": "Shizaru"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 632
-    , "BookName": "Shizaru"
-    ,"Affiliation":"Expansion" 
-  },
-  {
-    "id": 9     
-    , "Name": "Absalom Arcada B"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 905
-    , "BookName": "Absalom Arcada B"
-    ,"Affiliation":"Federation" 
-  },
-  {
-    "id": 10     
-    , "Name": "Zarahemla"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 735
-    , "BookName": "Zarahemla"
-    ,"Affiliation":"Independent" 
-  },
-  {
-    "id": 11     
-    , "Name": "Hamilton Prime"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 648
-    , "BookName": "Hamilton"
-    ,"Affiliation":"Federation" 
-  },
-  {
-    "id": 12     
-    , "Name": "Kathryn Segment"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 598
-    , "BookName": "Kathryn Segment"
-    ,"Affiliation":"Alliance" 
-  },
-  {
-    "id": 13     
-    , "Name": "Vatican"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 109
-    , "BookName": "Vatican"
-    ,"Affiliation":"Independent" 
-  },
-  {
-    "id": 14     
-    , "Name": "Payne"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 743
-    , "BookName": "Payne"
-    ,"Affiliation":"The Payne Liberation" 
-  },
-  {
-    "id": 15     
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 994
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 16
-    , "Name": "Oasis"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 229
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 17
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 15
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 18
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 22
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 19
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 278
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 20
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 111
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 21
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 753
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 22
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 517
-    , "BookName": "Antioch"
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 23
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 159
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 24
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 225
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 25
-    , "Name": "Groombridge"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 790
-    , "BookName": "Groombridge"
-    ,"Affiliation":"Federation" 
-  },
-  {
-    "id": 26
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 1522
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 27
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 2
-    , "BookName": "Sol"
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 28
-    , "Name": ""     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 701
-    , "BookName": ""
-    ,"Affiliation":"" 
-  },
-  {
-    "id": 29
-    , "Name": "Yahh"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 589
-    , "BookName": "Yahh"
-    ,"Affiliation":"Yahh" 
-  },
-  {
-    "id": 30
-    , "Name": "New Mesa"     
-    , "Description": ""     
-    , "Summary": ""
-    , "HabHygId": 166
-    , "BookName": "New Mesa"
-    ,"Affiliation":"Alliance" 
+    , "HabHygId": -1
+    , "BookName": "Dyban"
+    , "Affiliation":"Expansion" 
+    , "PlanetName": "Shizaru"
+    , "PlanetId": 8
   }
 ]

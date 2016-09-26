@@ -2,18 +2,7 @@ import { Component }   from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from './shared/services/auth.service';
 @Component({
-  template: `
-    <h2>LOGIN</h2>
-    <p>{{message}}</p>
-    <p>
-      <input type='text' placeholder='username' *ngIf='!authService.isLoggedIn' [(ngModel)]='username'/>
-      <br/>
-      <input type='text' placeholder='password' *ngIf='!authService.isLoggedIn' [(ngModel)]='password'/>
-      <br/>
-      <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-      <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-    </p>
-    `
+  templateUrl: '/app/login.component.html'
 })
 export class LoginComponent {
   message: string;

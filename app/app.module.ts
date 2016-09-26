@@ -11,6 +11,7 @@ import { BclModule }                    from '../app/bcl/bcl.module';
 import { DataEditorHabHygComponent }    from '../app/data-editor-habhyg/data-editor-habhyg.component';
 import { HabHygDetailComponent }        from '../app/habhyg-detail/habhyg-detail.component';
 import { PlacesModule }                 from '../app/places/places.module';
+import { MenuModule }                   from 'primeng/primeng';
 
 @NgModule({
   imports:[ 
@@ -18,6 +19,7 @@ import { PlacesModule }                 from '../app/places/places.module';
             , routing
             , PlacesModule
             , BclModule
+            , MenuModule
           ]
   , declarations: [
                     AppComponent
@@ -29,6 +31,7 @@ import { PlacesModule }                 from '../app/places/places.module';
                   ]
   , exports: [
                 BrowserModule
+                , MenuModule
              ]
   , providers:  [
                   appRoutingProviders

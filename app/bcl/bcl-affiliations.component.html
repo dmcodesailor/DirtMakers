@@ -1,0 +1,40 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <p-dataTable [value]="affiliations" [(selection)]="selectedAffiliation">
+            <p-column field="" header="">
+                <template let-affiliation="rowData" pTemplate type="body">
+                    <a class="link-button" (click)="showCrudDialog(affiliation, 'Edit')">Edit</a>                
+                    <a class="link-button" (click)="delete(affiliation, 'Delete')">Delete</a>                
+                </template>
+            </p-column>
+            <p-column field="Name" header="Name">
+            </p-column>
+            <p-column field="Description" header="Description">
+            </p-column>
+            <footer>
+                <div class="ui-helper-clearfix" style="width:100%">
+                    <button type="button" pButton icon="fa-plus" style="float:left" (click)="showCrudDialog(null, 'New')" label="Add"></button>
+                </div>
+            </footer>            
+        </p-dataTable>
+        <p-dialog header="{{actionMode}} Affiliation Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+            <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="selectedAffiliation">
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="vin">Name</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="Name" [(ngModel)]="selectedAffiliation.Name" /></div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-grid-col-4"><label for="color">Description</label></div>
+                    <div class="ui-grid-col-8"><input pInputText id="Description" [(ngModel)]="selectedAffiliation.Description" /></div>
+                </div>
+            </div>
+            <footer>
+                <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                    <button type="button" pButton icon="fa-close" (click)="cancel()" label="Cancel" *ngIf="actionMode === 'New'"></button>
+                    <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete" *ngIf="actionMode === 'Edit'"></button>
+                    <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+                </div>
+            </footer>
+        </p-dialog>        
+    </div>
+</div>

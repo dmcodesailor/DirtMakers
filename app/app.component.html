@@ -1,47 +1,32 @@
+<p-menu #menu popup="popup" [model]="items"></p-menu>
 <div class="ui-g main-navigation">
     <div class="ui-g-3 main-nav-title">
         <a  class="link-button" routerLink="/" routerLinkActive="active">Dirt Makers</a>
     </div>
     <div class="ui-g-9">
         <div class="ui-g">
-            <div class="ui-g-7">
-                <div class="ui-g">
-                    <div class="primary-nav">
-                        <div class="primary-nav-item">
-                            <a md-button routerLink="/places" routerLinkActive="active">PLACES</a>
-                        </div>
-                        <div class="primary-nav-item">
-                            <a md-button routerLink="/characters" routerLinkActive="active">CHARACTERS</a>
-                        </div>
-                        <div class="primary-nav-item">
-                            <a md-button routerLink="/vessels" routerLinkActive="active">VESSELS</a>
-                        </div>
-                        <div class="primary-nav-item">
-                            <a md-button routerLink="/orgs" routerLinkActive="active">ORGANIZATIONS</a>
-                        </div>
-                        <div class="primary-nav-item">
-                            <a md-button routerLink="/habhyg" routerLinkActive="active">TOOLS</a>
-                        </div>
+            <div class="ui-g-11">
+                <div class="primary-nav">
+                    <div class="primary-nav-item">
+                        <a md-button routerLink="/places" routerLinkActive="active" icon="fa-map-marker"><i class="fa fa-map-marker"></i>&nbsp;PLACES</a>
+                    </div>
+                    <div class="primary-nav-item">
+                        <a md-button routerLink="/characters" routerLinkActive="active"><i class="fa fa-users"></i>&nbsp;CHARACTERS</a>
+                    </div>
+                    <div class="primary-nav-item">
+                        <a md-button routerLink="/vessels" routerLinkActive="active"><i class="fa fa-rocket"></i>&nbsp;VESSELS</a>
+                    </div>
+                    <div class="primary-nav-item">
+                        <a md-button routerLink="/orgs" routerLinkActive="active"><i class="fa fa-institution"></i>&nbsp;ORGANIZATIONS</a>
+                    </div>
+                    <div class="primary-nav-item">
+                        <a md-button routerLink="/habhyg" routerLinkActive="active"><i class="fa fa-gears"></i>&nbsp;TOOLS</a>
                     </div>
                 </div>
             </div>
-            <div class="ui-g-5">
-                <div class="ui-g">
-                    <div class="secondary-nav">
-                        <div class="secondary-nav-item">
-                            <a md-button routerLink="/bcl" routerLinkActive="active" *ngIf="!authentic()">admin</a>
-                            <a md-button (click)="logout()" *ngIf="authentic()" >Logout</a>
-                        </div>
-                        <div class="secondary-nav-item">
-                            <a md-button routerLink="contact" routerLinkActive="active">contact</a>
-                        </div>
-                        <div class="secondary-nav-item">
-                            <a md-button routerLink="news" routerLinkActive="active">news</a>
-                        </div>
-                        <div class="secondary-nav-item">
-                            <a md-button routerLink="/about" routerLinkActive="active">about</a>
-                        </div>
-                    </div>
+            <div class="ui-g-1">
+                <div class="secondary-nav">
+                    <button type="button" pButton icon="fa fa-list" (click)="menu.toggle($event)"></button>
                 </div>
             </div>
         </div>

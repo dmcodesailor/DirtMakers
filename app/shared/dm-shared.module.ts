@@ -1,28 +1,31 @@
-import { NgModule }                 from '@angular/core';
-import { CommonModule }             from '@angular/common';
+import { NgModule }                     from '@angular/core';
+import { CommonModule }                 from '@angular/common';
 import { FormsModule
           , NG_VALUE_ACCESSOR
-          , ControlValueAccessor }  from '@angular/forms';
-import { HttpModule }               from '@angular/http';
+          , ControlValueAccessor }      from '@angular/forms';
+import { HttpModule }                   from '@angular/http';
 
-import { MdInputModule }            from '@angular2-material/input';
-import { MdProgressCircleModule }   from '@angular2-material/progress-circle';
-import { MdButtonModule }           from '@angular2-material/button';
+import { MdInputModule }                from '@angular2-material/input';
+import { MdProgressCircleModule }       from '@angular2-material/progress-circle';
+import { MdButtonModule }               from '@angular2-material/button';
 
-import { DataListModule }           from 'primeng/primeng';
-import { DataList }                 from 'primeng/primeng';
-import { SharedModule }             from 'primeng/primeng';
-import { DataTableModule }          from 'primeng/primeng';
-import { InputTextModule }          from 'primeng/primeng';
-import { InputTextareaModule }      from 'primeng/primeng';
-import { DropdownModule, Dropdown } from 'primeng/primeng';
-import { SelectItem}                from 'primeng/primeng';
-import { AccordionModule }          from 'primeng/primeng';
-import { Dialog }                   from 'primeng/primeng';
+import { DataListModule }               from 'primeng/primeng';
+import { DataList }                     from 'primeng/primeng';
+import { SharedModule }                 from 'primeng/primeng';
+import { DataTableModule }              from 'primeng/primeng';
+import { InputTextModule }              from 'primeng/primeng';
+import { InputTextareaModule }          from 'primeng/primeng';
+import { DropdownModule, Dropdown }     from 'primeng/primeng';
+import { SelectItem}                    from 'primeng/primeng';
+import { AccordionModule }              from 'primeng/primeng';
+import { DialogModule }                 from 'primeng/primeng';
+import { MenuModule, MenuItem }         from 'primeng/primeng';
+import { ButtonModule }                 from 'primeng/primeng';
 
-import { DialogComponent }          from './components/dialog.component';
-
-import { AuthService }              from './services/auth.service';
+import { DialogComponent }              from './components/dialog.component';
+import { AuthService }                  from './services/auth.service';
+import { AffiliationService }           from './services/affiliation.service';
+import { ConfigService }                from './services/config.service';
 
 @NgModule({
   imports:        [ 
@@ -35,10 +38,11 @@ import { AuthService }              from './services/auth.service';
                     , MdInputModule
                     , MdProgressCircleModule
                     , MdButtonModule
+                    , DialogModule
+                    , ButtonModule
                   ]
   , declarations: [ 
-                    Dialog
-                    , DialogComponent 
+                    DialogComponent 
                   ]
   , exports:      [ 
                     CommonModule
@@ -54,9 +58,13 @@ import { AuthService }              from './services/auth.service';
                     , MdInputModule
                     , MdProgressCircleModule
                     , MdButtonModule
+                    , DialogModule
+                    , ButtonModule
                   ]
     , providers:  [
                     AuthService  
+                    , AffiliationService
+                    , ConfigService
                   ]
 })
 export class DmSharedModule { }
