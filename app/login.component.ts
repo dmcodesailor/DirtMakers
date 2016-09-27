@@ -24,7 +24,6 @@ export class LoginComponent {
         // If no redirect has been set, use the default
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/bcl';
         // Redirect the user
-        console.log(redirect);
         this.router.navigate([redirect]);
       }
     });

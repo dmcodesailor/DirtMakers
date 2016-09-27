@@ -47,21 +47,13 @@ export class BclAffiliationsComponent extends BaseComponent implements OnInit {
      }
 
     private loadAffiliations() {
+        this.affiliations = new Array<Affiliation>();
         this.readService.get().toPromise().then((affiliations: Affiliation[]) => {
-            console.log(affiliations);
             for (let i:number = 0; i < affiliations.length; i++) {
                 let affiliation:Affiliation = affiliations[i];
                 this.affiliations.push(affiliation);
             }
         });
-
-        // this.affiliations.push({label: '-- Choose --', value: null});
-        // this.affiliations.push({label: 'Alliance', value: "Alliance"});
-        // this.affiliations.push({label: 'Expansion', value: "Expansion"});
-        // this.affiliations.push({label: 'Federation', value: "Federation"});
-        // this.affiliations.push({label: 'Gulu Farxad Adag', value: "Gulu Farxad Adag"});
-        // this.affiliations.push({label: 'Independent', value: "Independent"});
-        // this.affiliations.push({label: 'Nihon-Koku', value: "Nihon-Koku"});
     }
 
     private showCrudDialog(affiliation:Affiliation, mode:string) {
@@ -82,11 +74,55 @@ export class BclAffiliationsComponent extends BaseComponent implements OnInit {
     }
 
     private delete() {
-
+        if (this.selectedAffiliation.id > 0) {
+            this.adminService.delete(this.selectedAffiliation.id).toPromise().then((result:boolean) => {
+                if (result) {
+                    alert ("Successfully deleted affiliation.");
+                    this.loadAffiliations();
+                    this.displayDialog = false;
+                } else {
+                    alert ("Affiliation not deleted.");
+                }
+            })
+        }
     }
 
     private save() {
+        if (this.actionMode === "New") {
+            if (this.validAffiliation(this.selectedAffiliation)) {
+                this.adminService.create(this.selectedAffiliation).toPromise().then((id:number) => {
+                    alert ("Created affiliation (" + id.toString() + ").");
+                    this.loadAffiliations();
+                    this.displayDialog = false;
+                });
+            } else {
+                alert ("The affiliation is invalid.");
+            }
+        } else {
+            this.update();
+        }
+    }
 
+    private update() {
+        if (this.validAffiliation(this.selectedAffiliation)) {
+            this.adminService.update(this.selectedAffiliation).toPromise().then((result:any) => {
+                alert ("Affiliation updated successfully.");
+                this.loadAffiliations();
+                this.displayDialog = false;
+            });
+        } else {
+            alert ("The affiliation is invalid.");
+        }
+    }
+
+    private validAffiliation (affiliation:Affiliation):boolean {
+        let result = true;
+        if (affiliation === null || affiliation === undefined) {
+            result = false;
+        } else if (affiliation.Name.trim().length === 0 || affiliation.Description.trim().length === 0) {
+            result = false;
+        }
+        return result;
     }
 
 }

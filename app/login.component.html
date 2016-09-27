@@ -2,11 +2,12 @@
     <div class="ui-g-4">&nbsp;</div>
     <div class="ui-g-4">
         <div style="text-align:center;">
-            <input pInputText type='text' placeholder='username' [(ngModel)]='username'/>
+            <input pInputText type='text' placeholder='username' [(ngModel)]='username' style="width:100%;"/>
             <br/>
-            <input pInputText type='text' placeholder='password' [(ngModel)]='password'/>
+            <input pInputText type='text' placeholder='password' [(ngModel)]='password' style="width:100%;"/>
             <br/>
         </div>
+        <br/>
         <div style="text-align:right;">
             <button pButton (click)="login()" label="Login"  *ngIf="!authService.isLoggedIn"></button>
             <button pButton (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>

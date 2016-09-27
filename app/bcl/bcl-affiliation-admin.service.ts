@@ -23,7 +23,7 @@ export class BclAffiliationAdminService {
                     .catch(this.handleError);
     }
 
-    public update(affiliation:Affiliation):Observable<boolean> {
+    public update(affiliation:Affiliation):Observable<any> {
         return this.http.put(this.url() + affiliation.id.toString(), affiliation)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -35,9 +35,16 @@ export class BclAffiliationAdminService {
                     .catch(this.handleError);
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || { };
+    private extractData(res: Response):any {
+        let result:any = "";
+        if (res.status === 200) {
+            let body = res.json();
+            result = body || { };
+        }
+        if (res.status === 204) {
+            result = true;
+        }
+        return result;
     }
 
     protected handleError(error: Response) {

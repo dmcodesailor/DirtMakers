@@ -37,22 +37,17 @@ export class AppComponent {
             {label: 'About', icon: 'fa-info'}
             , {label: 'News', icon: 'fa-newspaper-o'}
             , {label: 'Contact', icon: 'fa-commenting-o'}
-            , {label: 'Admin', icon: 'fa-first-order', command: (event) => {
-                this.router.navigate(['/bcl']);
-            }}
         ];
+        this.setAdminMenuItem();
     }
 
     private setAdminMenuItem () {
-        if (this.authentic()) {
             this.items.push({label: 'Logout', icon: 'fa-sign-out', command: (event) => {
-                this.router.navigate(['/bcl']);
+                this.router.navigate(['/logout']);
             }})
-        } else {
             this.items.push({label: 'Admin', icon: 'fa-first-order', command: (event) => {
                 this.router.navigate(['/bcl']);
             }})
-        }
     }
 
     public authentic():boolean {
