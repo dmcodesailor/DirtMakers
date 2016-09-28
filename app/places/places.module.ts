@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 // import { routing, appRoutingProviders } from '../app.routing';
 import { PlacesComponent }   from './places.component';
 import { PlaceDetailsComponent } from './place-details.component';
-import { PlacesService } from './places.service';
+import { PlacesService } from '../shared/services/places.service';
 import { placesRouting } from './places.routing';
 import { DataGridModule, Column, CarouselModule } from 'primeng/primeng';
 import { DataTable } from 'primeng/primeng';

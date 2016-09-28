@@ -16,9 +16,9 @@ import {MdProgressCircleModule}             from '@angular2-material/progress-ci
 import {MdInputModule}                      from '@angular2-material/input/input';
 
 import { BaseComponent }                    from '../shared/components/base.component';
-import { Place, Planet, City, Station }     from '../places/place';
-import { PlaceType }                        from '../places/place-type';
-import { PlacesService }                    from '../places/places.service';
+import { Place, Planet, City, Station }     from '../shared/models/place';
+import { PlaceType }                        from '../shared/models/place-type';
+import { PlacesService }                    from '../shared/services/places.service';
 import { DmSharedModule }                   from '../shared/dm-shared.module';
 
 @Component({

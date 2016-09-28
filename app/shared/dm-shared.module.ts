@@ -26,6 +26,7 @@ import { DialogComponent }              from './components/dialog.component';
 import { AuthService }                  from './services/auth.service';
 import { AffiliationService }           from './services/affiliation.service';
 import { ConfigService }                from './services/config.service';
+import { PlacesService }                 from './services/places.service';
 
 @NgModule({
   imports:        [ 
@@ -40,6 +41,7 @@ import { ConfigService }                from './services/config.service';
                     , MdButtonModule
                     , DialogModule
                     , ButtonModule
+                    , SharedModule
                   ]
   , declarations: [ 
                     DialogComponent 
@@ -60,11 +62,13 @@ import { ConfigService }                from './services/config.service';
                     , MdButtonModule
                     , DialogModule
                     , ButtonModule
+                    , SharedModule
                   ]
     , providers:  [
                     AuthService  
                     , AffiliationService
                     , ConfigService
+                    , PlacesService
                   ]
 })
 export class DmSharedModule { }

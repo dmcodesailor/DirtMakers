@@ -1,0 +1,92 @@
+<div class="ui-g">
+    <div class="ui-g-3">
+        <dm-bcl-nav></dm-bcl-nav>
+    </div>
+    <div class="ui-g-9" style="background-color: white;">
+        <div style="text-align:center;"><h2>{{actionMode}} Place - {{placeTypeName}}</h2></div>
+        <div class="ui-g" *ngIf="loading">
+            <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+        </div>
+        <div *ngIf="!(loading)">
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <md-input placeholder="Name" value="" class="dm-form-input" color="accent"></md-input>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <p-editor [(ngModel)]="Description" [style]="{'height':'320px'}"></p-editor>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <md-input placeholder="Summary" value="" class="dm-form-input"></md-input>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <md-input placeholder="Affiliation" value="" class="dm-form-input"></md-input>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <md-input placeholder="HabHygId" value="" class="dm-form-input"></md-input>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g" *ngIf='placeTypeName !== "Planet"'>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6">
+                    <p-dropdown [options]="planetsSelectItems" [(ngModel)]="selectedPlanet" class="dm-form-input" [style]="{'width':'95%'}"></p-dropdown>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+                <div class="ui-g-6" style="text-align:right;">
+                    <button md-button color="accent" (click)="cancel()">Cancel</button>
+                    &nbsp;
+                    <button md-button color="primary">Save</button>
+                </div>
+                <div class="ui-g-3">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

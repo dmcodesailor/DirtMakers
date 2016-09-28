@@ -3,8 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import {Http, Response} from "@angular/http";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Place, Planet, City, Station } from './place';
-import { PlaceType } from './place-type';
+import { Place, Planet, City, Station } from '../models/place';
+import { PlaceType }                    from '../models/place-type';
+import { ConfigService }                from './config.service';
 
 @Injectable()
 export class PlacesService {
@@ -12,9 +13,15 @@ export class PlacesService {
     private resourcePath: string = "/app/resources/";
     private fileNameTemplate:string = "places-{0}.json"
 
-    constructor(private http:Http) {
+    constructor(private config:ConfigService
+                , private http:Http) {
 
+    }
+
+          private url():string {
+         return this.config.baseApiUrl() + "Places/";
      }
+
 
     public getPlaceTypes():Observable<PlaceType[]> {
         var fileName = this.resourcePath + "place-types.json";
@@ -23,19 +30,31 @@ export class PlacesService {
         .catch(this.handleError);
     }
 
+    public get():Observable<Place[]> {
+        return this.http.get(this.url())
+                    .map(this.extractData)
+                    .catch(this.handleError);     
+    }
+
+    public getOne(id:number):Observable<Place> {
+        return this.http.get(this.url() + id.toString())
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
     public getPlanets():Observable<Planet[]> {
-        return this.get("planets");
+        return this.getEx("planets");
     }
 
     public getCities():Observable<City[]> {
-        return this.get("cities");
+        return this.getEx("cities");
     }
 
     public getStations():Observable<Station[]> {
-        return this.get("stations");
+        return this.getEx("stations");
     }
 
-    private get(placeTypeNamePluralized:string):Observable<any[]> {
+    private getEx(placeTypeNamePluralized:string):Observable<any[]> {
         placeTypeNamePluralized = placeTypeNamePluralized.toLocaleLowerCase();
         let placeTypeFileName = this.fileNameTemplate.replace("{0}", placeTypeNamePluralized);
         let fullFileName = this.resourcePath + placeTypeFileName;

@@ -2303,6 +2303,9 @@ html, body {
   /*clear: both;*/
   background-color: #cac7cc;
 }
+.dm-form-input {
+  width: 100%;
+}
 /*******************************************
 */
 .staticTabs md-tab-content {

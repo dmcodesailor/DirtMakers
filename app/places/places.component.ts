@@ -14,9 +14,9 @@ import { Dialog } from 'primeng/primeng';
 import { SharedModule } from 'primeng/primeng';
 
 import { BaseComponent } from '../shared/components/base.component';
-import { Place, Planet, City, Station } from './place';
-import { PlaceType } from './place-type';
-import { PlacesService } from './places.service';
+import { Place, Planet, City, Station } from '../shared/models/place';
+import { PlaceType } from '../shared/models/place-type';
+import { PlacesService } from '../shared/services/places.service';
 
 @Component({
     selector: 'dm-places'

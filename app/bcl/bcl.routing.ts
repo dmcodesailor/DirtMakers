@@ -1,9 +1,10 @@
 import { ModuleWithProviders }      from '@angular/core';
 import { Routes, RouterModule }     from '@angular/router';
 import { BclComponent }             from './bcl.component';
-import { BclPlacesComponent }       from './bcl-places.component';
+import { BclPlacesListComponent }       from './bcl-places-list.component';
 import { AuthGuard }                from '../shared/services/auth-guard.service';
 import { BclAffiliationsComponent } from './bcl-affiliations.component';
+import { BclPlaceDetailsComponent } from './bcl-place-details.component';
 
 // import { BclCharactersComponent } from './bcl-characters.component';
 // import { BclVesselsComponent } from './bcl-vessels.component';
@@ -16,7 +17,8 @@ const bclRoutes: Routes = [
   // { path: 'bcl', redirectTo: '/bcl', pathMatch: 'full'}
     { path: '', children: [
         { path: 'bcl', component: BclComponent, canActivate: [AuthGuard], }
-        , { path: 'places', component: BclPlacesComponent }
+        , { path: 'places', component: BclPlacesListComponent }
+        , { path: 'place/:id', component: BclPlaceDetailsComponent }
         , { path: 'affiliations', component: BclAffiliationsComponent }
         // , { path: ':id', component: BclPlacesComponent }
         // , { path: 'characters', component: BclCharactersComponent }
