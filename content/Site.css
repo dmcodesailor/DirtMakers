@@ -2286,9 +2286,10 @@ html, body {
   height: 4em;
 }
 .dm-label {
-  color: #FFFFFF;
-  font: bold;
-  font-size: larger;
+  color: #7D7C7F;
+  /*font: bold;*/
+  /*font-size: larger;*/
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 /* BCL 01/21/2016 - General Site Styles */
 .body-background {

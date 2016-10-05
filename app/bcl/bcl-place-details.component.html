@@ -2,18 +2,23 @@
     <div class="ui-g-3">
         <dm-bcl-nav></dm-bcl-nav>
     </div>
-    <div class="ui-g-9" style="background-color: white;">
+    <div class="ui-g-9">
         <div style="text-align:center;"><h2>{{actionMode}} Place - {{placeTypeName}}</h2></div>
         <div class="ui-g" *ngIf="loading">
             <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
         </div>
-        <div *ngIf="!(loading)">
+        <form *ngIf="!(loading)" #myform="ngForm" (ngSubmit)="save(userform.value)" >
             <div class="ui-g">
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
                 <div class="ui-g-6">
-                    <md-input placeholder="Name" value="" class="dm-form-input" color="accent"></md-input>
+                    <md-input #placeName="ngModel" placeholder="Name" class="dm-form-input" name="placeName" [(ngModel)]="Name" required></md-input>
+                    <!--<input pInputText type="text" formControlName="name" placeholder="Required"/>-->
+                    <!--<div class="ui-message ui-messages-error ui-corner-all" *ngIf="placeName.untouched||(!placeName.valid&&placeName.dirty)">
+                        <i class="fa fa-warning"></i>
+                        Name is required
+                    </div>-->
                 </div>
                 <div class="ui-g-3">
                     &nbsp;
@@ -24,13 +29,18 @@
                     &nbsp;
                 </div>
                 <div class="ui-g-6">
-                    <p-editor [(ngModel)]="Description" [style]="{'height':'320px'}"></p-editor>
+                    <!--<p-editor [(ngModel)]="Description" [style]="{'height':'320px'}"></p-editor>-->
+                     <!--<input pInputText type="text" formControlName="firstname" placeholder="Required"/>-->
                 </div>
                 <div class="ui-g-3">
                     &nbsp;
+                     <!--<div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty">
+                        <i class="fa fa-close"></i>
+                        Firstname is required
+                    </div>-->
                 </div>
             </div>
-            <div class="ui-g">
+            <!--<div class="ui-g">
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
@@ -46,13 +56,15 @@
                     &nbsp;
                 </div>
                 <div class="ui-g-6">
-                    <md-input placeholder="Affiliation" value="" class="dm-form-input"></md-input>
-                </div>
+                    <span class="dm-label">Affiliation</span>
+                    <p-dropdown [options]="affiliations" [(ngModel)]="selectedAffiliation" class="dm-form-input" [style]="{'width':'95%'}"></p-dropdown>
+                    <!--<md-input placeholder="Affiliation" value="" class="dm-form-input"></md-input>-->
+                <!--</div>
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
-            </div>
-            <div class="ui-g">
+            </div>-->
+            <!--<div class="ui-g">
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
@@ -73,7 +85,7 @@
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
-            </div>
+            </div>-->
             <div class="ui-g">
                 <div class="ui-g-3">
                     &nbsp;
@@ -81,12 +93,12 @@
                 <div class="ui-g-6" style="text-align:right;">
                     <button md-button color="accent" (click)="cancel()">Cancel</button>
                     &nbsp;
-                    <button md-button color="primary">Save</button>
+                    <button md-button color="primary" (click)="save()">Save</button>
                 </div>
                 <div class="ui-g-3">
                     &nbsp;
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>

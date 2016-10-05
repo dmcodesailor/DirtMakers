@@ -1,4 +1,11 @@
 import { NgModule }                         from '@angular/core';
+import { ReactiveFormsModule
+        , FormsModule
+        , FormBuilder
+        , Validators
+        , FormGroup
+        , FormControl 
+        }                                   from '@angular/forms';
 
 import { EditorModule }                     from 'primeng/primeng';
 
@@ -18,10 +25,14 @@ import { BclPlaceDetailsComponent }         from './bcl-place-details.component'
                         bclRouting
                         , DmSharedModule
                         , EditorModule
+                        , ReactiveFormsModule
+                        , FormsModule
                     ],
     exports:        [
                         DmSharedModule
                         , EditorModule
+                        , ReactiveFormsModule
+                        , FormsModule
                     ],
     declarations:   [
                         BclComponent

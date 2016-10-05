@@ -29,30 +29,11 @@
                 </p-column>
                 <footer>
                     <div class="ui-helper-clearfix" style="width:100%">
-                        <button type="button" pButton icon="fa-plus" style="float:left" label="Add" (click)="new()"></button> <!--[routerLink]="['/bcl/place/0']"-->
+                        <button type="button" pButton icon="fa-plus" style="float:left" label="Add" (click)="new()"></button>
                         &nbsp;<button type="button" pButton icon="fa-refresh" style="float:left" (click)="loadPlaces()" label="Refresh"></button>
                     </div>
                 </footer>            
             </p-dataTable>
-            <!--<p-dialog header="{{actionMode}} Affiliation" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
-                <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="selectedPlace">
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-4"><label for="vin">Name</label></div>
-                        <div class="ui-grid-col-8"><input pInputText id="Name" [(ngModel)]="selectedPlace.Name" /></div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-grid-col-4"><label for="color">Description</label></div>
-                        <div class="ui-grid-col-8"><textarea pInputTextarea id="Description" [(ngModel)]="selectedPlace.Description"></textarea></div>
-                    </div>
-                </div>
-                <footer>
-                    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                        <button type="button" pButton icon="fa-close" (click)="cancel()" label="Cancel"></button>
-                        <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete" *ngIf="actionMode === 'Delete'"></button>
-                        <button type="button" pButton icon="fa-check" (click)="save()" label="Save" *ngIf="actionMode !== 'Delete'"></button>
-                    </div>
-                </footer>
-            </p-dialog>        -->
         </div>
     </div>
 </div>
