@@ -5,14 +5,21 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Place, Planet, City, Station } from '../shared/models/place';
 import { ConfigService }                from '../shared/services/config.service';
+import { AuthService }                  from '../shared/services/auth.service';
+import { BaseService }                  from '../shared/services/base.service';
 
 @Injectable()
-export class BclPlaceAdminService {
+export class BclPlaceAdminService extends BaseService {
 
     constructor(private config:ConfigService
-                , private http:Http) {
-     }
+                , private http:Http
+                , private authService:AuthService) {
+                    super(authService);
+    }
 
+    public handleLogout (message:string) {
+        console.log("BclPlaceAdminService::handleLogoutEvent(" + message + ")");
+    }
      private url():string {
          return this.config.baseApiUrl() + "Places/";
      }

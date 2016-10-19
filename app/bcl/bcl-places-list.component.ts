@@ -21,6 +21,7 @@ import { BclPlaceAdminService }             from './bcl-places-admin.service';
 import { PlacesService }                    from '../shared/services/places.service';
 import { Place, Planet, City, Station }     from '../shared/models/place';
 import { DialogComponent }                  from '../shared/components/dialog.component';
+import { AuthService }                      from '../shared/services/auth.service';
 
 @Component({
     selector: 'dm-bcl-places-list-admin',
@@ -36,8 +37,11 @@ export class BclPlacesListComponent extends BaseComponent implements OnInit {
     constructor(private route:ActivatedRoute
                 , private router:Router
                 , private adminService:BclPlaceAdminService
-                , private readService:PlacesService) {
+                , private readService:PlacesService
+                , private auth:AuthService
+                ){
         super();
+        this.auth.logoutEvent.subscribe((msg:string) => {console.log("BclPlacesListComponent::logoutEvent::" + msg);});
     }
 
     ngOnInit() {

@@ -39,44 +39,44 @@ import { IReadOnlyService }                 from '../shared/services/i-readonly.
 @Component({
     selector: 'dm-bcl-place-details-admin',
     templateUrl: 'app/bcl/bcl-place-details.component.html'
-    , animations: [
-        trigger('routeAnimation', [
-            state('*',
-                style({
-                    opacity: 1,
-                    transform: 'translateX(0)'
-                })
-            ),
-            transition('void => *', [
-                style({
-                    opacity: 0,
-                    transform: 'translateX(-100%)'
-                }),
-                animate('0.2s ease-in')
-            ]),
-            transition('* => void', [
-                animate('0.5s ease-out', 
-                    style({
-                        opacity: 0,
-                        transform: 'translateY(100%)'
-                    }))
-            ])
-        ])
-    ]
+    // , animations: [
+    //     trigger('routeAnimation', [
+    //         state('*',
+    //             style({
+    //                 opacity: 1,
+    //                 transform: 'translateX(0)'
+    //             })
+    //         ),
+    //         transition('void => *', [
+    //             style({
+    //                 opacity: 0,
+    //                 transform: 'translateX(-100%)'
+    //             }),
+    //             animate('0.2s ease-in')
+    //         ]),
+    //         transition('* => void', [
+    //             animate('0.5s ease-out', 
+    //                 style({
+    //                     opacity: 0,
+    //                     transform: 'translateY(100%)'
+    //                 }))
+    //         ])
+    //     ])
+    // ]
 })
 export class BclPlaceDetailsComponent extends BaseComponent implements OnInit {
     
-    @HostBinding('@routeAnimation') get routeAnimation() {
-        return true;
-    }
+    // @HostBinding('@routeAnimation') get routeAnimation() {
+    //     return true;
+    // }
 
-    @HostBinding('style.display') get display() {
-        return 'block';
-    }
+    // @HostBinding('style.display') get display() {
+    //     return 'block';
+    // }
 
-    @HostBinding('style.position') get position() {
-        return 'relative';
-    }
+    // @HostBinding('style.position') get position() {
+    //     return 'relative';
+    // }
 
     public places:Place[] = [];
     public loading:boolean = true;

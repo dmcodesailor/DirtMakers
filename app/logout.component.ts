@@ -1,6 +1,8 @@
 import { Component }   from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from './shared/services/auth.service';
+import { AppModule }    from './app.module';
+
 @Component({
     template:''
 })

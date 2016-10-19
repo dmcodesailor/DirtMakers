@@ -1,17 +1,25 @@
 import { Injectable }               from '@angular/core';
 import { Observable }               from 'rxjs/Observable';
-import {Http, Response}             from "@angular/http";
+import { Http, Response }             from "@angular/http";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Affiliation }              from '../shared/models/affiliation';
 import { ConfigService }            from '../shared/services/config.service';
+import { AuthService }              from '../shared/services/auth.service';
+import { BaseService }              from '../shared/services/base.service';
 
 @Injectable()
-export class BclAffiliationAdminService {
+export class BclAffiliationAdminService extends BaseService {
 
     constructor(private config:ConfigService
-                , private http:Http) {
-     }
+                , private http:Http
+                , private auth:AuthService) {
+                    super(auth);
+    }
+
+    public handleLogout (message:string) {
+        console.log("BclAffiliationAdminService::handleLogoutEvent(" + message + ")");
+    }
 
      private url():string {
          return this.config.baseApiUrl() + "Affiliations/";

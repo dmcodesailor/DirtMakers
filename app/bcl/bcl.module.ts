@@ -47,4 +47,4 @@ import { BclPlaceDetailsComponent }         from './bcl-place-details.component'
                         , BclPlaceAdminService
                     ]
 })
-export class BclModule { }
+export class BclModule {}

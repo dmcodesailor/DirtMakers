@@ -14,6 +14,7 @@ import { BclModule }                    from '../app/bcl/bcl.module';
 import { DataEditorHabHygComponent }    from '../app/data-editor-habhyg/data-editor-habhyg.component';
 import { HabHygDetailComponent }        from '../app/habhyg-detail/habhyg-detail.component';
 import { PlacesModule }                 from '../app/places/places.module';
+import { AuthService }                  from './shared/services/auth.service';
 
 @NgModule({
   imports:[ 
@@ -38,8 +39,12 @@ import { PlacesModule }                 from '../app/places/places.module';
              ]
   , providers:  [
                   appRoutingProviders
+                  , AuthService  
                 ]
   , bootstrap:  [ AppComponent ]
 })
-export class AppModule { }
-
+export class AppModule {
+  public reset() {
+    
+  }
+}

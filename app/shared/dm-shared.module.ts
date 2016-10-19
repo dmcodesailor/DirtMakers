@@ -23,10 +23,9 @@ import { MenuModule, MenuItem }         from 'primeng/primeng';
 import { ButtonModule }                 from 'primeng/primeng';
 
 import { DialogComponent }              from './components/dialog.component';
-import { AuthService }                  from './services/auth.service';
 import { AffiliationService }           from './services/affiliation.service';
 import { ConfigService }                from './services/config.service';
-import { PlacesService }                 from './services/places.service';
+import { PlacesService }                from './services/places.service';
 
 @NgModule({
   imports:        [ 
@@ -65,8 +64,7 @@ import { PlacesService }                 from './services/places.service';
                     , SharedModule
                   ]
     , providers:  [
-                    AuthService  
-                    , AffiliationService
+                    AffiliationService
                     , ConfigService
                     , PlacesService
                   ]

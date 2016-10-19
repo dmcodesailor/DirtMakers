@@ -6,5 +6,7 @@
     , "**/*.iml":true
     , "system.config.js":false
   }
-  , "explorerExcludedFiles.show": true
+,
+"explorerExcludedFiles.show": true,
+"typescript.tsdk": "./node_modules/typescript/lib"
 }

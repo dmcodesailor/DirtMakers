@@ -28,6 +28,7 @@ enableProdMode();
 //     .catch(error => console.log(error));
 
  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
  platformBrowserDynamic().bootstrapModule(AppModule
  ,[
     //  FormsModule

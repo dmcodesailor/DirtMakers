@@ -2,24 +2,30 @@ import { Injectable }               from '@angular/core';
 import { Http, Headers, Response }  from '@angular/http';
 import { Observable }               from 'rxjs/Observable';
 import { Router }                   from '@angular/router';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+import                              'rxjs/add/observable/of';
+import                              'rxjs/add/operator/do';
+import                              'rxjs/add/operator/delay';
 import { Account }                  from '../models/account';
+import { Subject }                  from 'rxjs/Subject';
 
-// referenced the following for this: https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.x4391hmxd
-
+/**
+ * 
+ * referenced the following for this: https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.x4391hmxd
+ * @export
+ * @class AuthService
+ */
 @Injectable()
 export class AuthService {
-  isLoggedIn: boolean = false;
+
+  private logoutEventSubj = new Subject<string>();
   private resourcePath:string = "/app/resources/";
 
+  public logoutEvent = this.logoutEventSubj.asObservable();
+  public isLoggedIn: boolean = false;
+  public redirectUrl: string;
+
   constructor(private http:Http, private router:Router) {
-
   }
-
-  // store the URL so we can redirect after logging in
-  redirectUrl: string;
 
   private getAccounts(): Observable<Account[]> {
     var fileName = this.resourcePath + "security.json";
@@ -41,7 +47,6 @@ export class AuthService {
     });
     return Observable.of(true).do(val => this.isLoggedIn = true);
 
-
     // return this.http
     //   .post(
     //     '/login', 
@@ -62,18 +67,20 @@ export class AuthService {
   }
 
   logout() {
+    console.log("AuthService::logout");
+    this.logoutEventSubj.next("logging out");
     this.isLoggedIn = false;
     this.router.navigate(['/']);
   }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || { };
-    }
+  private extractData(res: Response) {
+    let body = res.json();
+    return body || { };
+  }
 
-    protected handleError(error: Response) {
-        console.error('An error occurred', error);
-        return Observable.throw(error.json().error);
-    }
+  protected handleError(error: Response) {
+    console.error('An error occurred', error);
+    return Observable.throw(error.json().error);
+  }
 
 }
