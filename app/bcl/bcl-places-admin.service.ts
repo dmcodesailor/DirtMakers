@@ -1,8 +1,8 @@
 import { Injectable }                   from '@angular/core';
 import { Observable }                   from 'rxjs/Observable';
-import {Http, Response}                 from "@angular/http";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { Http, Response }               from "@angular/http";
+import                                  'rxjs/add/operator/map';
+import                                  'rxjs/add/operator/catch';
 import { Place, Planet, City, Station } from '../shared/models/place';
 import { ConfigService }                from '../shared/services/config.service';
 import { AuthService }                  from '../shared/services/auth.service';
@@ -18,8 +18,9 @@ export class BclPlaceAdminService extends BaseService {
     }
 
     public handleLogout (message:string) {
-        console.log("BclPlaceAdminService::handleLogoutEvent(" + message + ")");
+        console.log("BclPlaceAdminService::handleLogout(" + message + ")");
     }
+
      private url():string {
          return this.config.baseApiUrl() + "Places/";
      }
