@@ -29,8 +29,11 @@
                     &nbsp;
                 </div>
                 <div class="ui-g-6">
+                    <label>Affiliation:</label>&nbsp;<p-dropdown [style]="{'width':'95%'}" name="myName" [options]="myDisplayPlaces" [(ngModel)]="mySelId" (onChange)="onSelectedPlaceChanged($event)"></p-dropdown>
+                    <br/><br/>
+                    ({{mySelId}}) {{mySelPlaceName}}
                     <!--<p-editor [(ngModel)]="Description" [style]="{'height':'320px'}"></p-editor>-->
-                     <!--<input pInputText type="text" formControlName="firstname" placeholder="Required"/>-->
+                    <!--<input pInputText type="text" formControlName="firstname" placeholder="Required"/>-->
                 </div>
                 <div class="ui-g-3">
                     &nbsp;

@@ -8,6 +8,7 @@
         , "experimentalDecorators": true
         , "removeComments": false
         , "noImplicitAny": false
+        , "types" : ["hammerjs"]
     }
     , "exclude": [
         "node_modules"
