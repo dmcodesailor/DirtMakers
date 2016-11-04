@@ -92,6 +92,12 @@ export class BclPlaceDetailsComponent extends BaseComponent implements OnInit {
 
     public userform: FormGroup;
 
+    public myPlaces:Planet[] = [];
+    public mySelPlace:Planet;
+    public mySelId:string;
+    public myDisplayPlaces:SelectItem[] = [];
+    public mySelPlaceName:string;
+
     constructor(private route:ActivatedRoute
                 , private router:Router
                 , private fb: FormBuilder
@@ -115,8 +121,26 @@ export class BclPlaceDetailsComponent extends BaseComponent implements OnInit {
         }
      }
 
-     initValidation () {
-         
+    onSelectedPlaceChanged(event: any) {
+        if (this.mySelId != null && this.mySelId !== undefined) {
+            this.mySelPlace = this.myPlaces.find(o => o.id === +this.mySelId);
+            if (this.mySelPlace === null || this.mySelPlace === undefined) {
+                this.mySelId = "-1";
+                this.mySelPlaceName = '-- Choose --';
+            } else {
+                this.mySelId = this.mySelPlace.id.toString();
+                this.mySelPlaceName = this.mySelPlace.Name;
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * 
+     * @memberOf BclPlaceDetailsComponent
+     */
+    initValidation () {     
           this.userform = this.fb.group({
             // 'name': new FormControl('', Validators.required)
             // 'firstname': new FormControl('', Validators.required),
@@ -153,6 +177,14 @@ export class BclPlaceDetailsComponent extends BaseComponent implements OnInit {
      private loadPlanets() {
          this.readService.getPlanets().toPromise().then((planets:Planet[]) => {
              this.planets = planets;
+             this.myPlaces = planets;
+            this.myDisplayPlaces.push({label: '-- Choose --', value: "-1"});
+            this.myPlaces.forEach((v, i, a) => {
+                this.myDisplayPlaces.push({label: v.Name, value: v.id});
+            })
+            this.mySelId = "-1";//this.myPlaces[0].id.toString();
+            // this.mySelPlace = this.myPlaces.find(p => p.id === +this.mySelId);
+            this.mySelPlaceName = '-- Choose --';
              planets.forEach((planet:Planet) => {
                  if (planet.Name.trim().length > 0) {
                     this.planetsSelectItems.push({label: planet.Name, value: planet.id});
