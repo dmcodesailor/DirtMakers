@@ -16,6 +16,7 @@ import { HabHygDetailComponent }        from '../app/habhyg-detail/habhyg-detail
 import { PlacesModule }                 from '../app/places/places.module';
 import { AuthService }                  from './shared/services/auth.service';
 import { SocketComponent }              from './shared/components/socket.component';
+import { SocketService }                from './shared/services/socket.service';
 
 @NgModule({
   imports:[ 
@@ -42,6 +43,7 @@ import { SocketComponent }              from './shared/components/socket.compone
   , providers:  [
                   appRoutingProviders
                   , AuthService  
+                  , SocketService
                 ]
   , bootstrap:  [ AppComponent ]
 })
