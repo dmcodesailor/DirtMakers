@@ -4,3 +4,7 @@
 *.log.*
 .DS_Store
 *.iml
+<<<<<<< HEAD
+=======
+karma*
+>>>>>>> origin/master

@@ -1,12 +1,7 @@
 {
-  "files.exclude": {
-    "**/*.js": true
-    , "**/*.map": true
-    , "**/*.log.*":true
-    , "**/*.iml":true
-    , "system.config.js":false
-  }
-,
-"explorerExcludedFiles.show": true,
-"typescript.tsdk": "./node_modules/typescript/lib"
+  "explorerExcludedFiles.show": true,
+  "explorerExcludedFiles.patterns": [
+    "file://.gitignore"
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

@@ -13,7 +13,7 @@
         <label>HabHyg:</label>&nbsp;<p-dropdown [options]="habhygChoices" [(ngModel)]="selectedAffiliation"></p-dropdown>
     </div>
     <div class="ui-g-12">
-        <label>Affiliation:</label>&nbsp;<p-dropdown [options]="affiliations" [(ngModel)]="selectedAffiliation"></p-dropdown>
+        <label>Affiliation:</label>&nbsp;<p-dropdown [options]="myDisplayPlaces" [(ngModel)]="mySelId" (onChange)="onSelectedPlaceChanged($event)"></p-dropdown>
     </div>
     <div class="ui-g-12" *ngIf="selectedPlace.Type !== Planet">
         What planet ya ohn yo?

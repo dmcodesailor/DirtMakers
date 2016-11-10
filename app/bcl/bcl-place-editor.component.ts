@@ -34,6 +34,11 @@ export class BclPlaceEditorComponent extends BaseComponent implements OnInit {
     public selectedPlace:Place;
     public loading:boolean = true;
 
+    public myPlaces:Place[] = [];
+    public mySelPlace:Place;
+    public mySelId:string;
+    public myDisplayPlaces:SelectItem[] = [];
+
     constructor(private route:ActivatedRoute
                 , private router:Router
                 , private placesService:PlacesService) {
@@ -42,11 +47,26 @@ export class BclPlaceEditorComponent extends BaseComponent implements OnInit {
     ngOnInit() {
         this.loadPlanets();
         this.loadAffiliations();
+
+        this.myDisplayPlaces.push({label: '-- Choose --', value: "-1"});
+        this.myPlaces.forEach((v, i, a) => {
+            this.myDisplayPlaces.push({label: v.Name, value: v.id});
+        })
+        this.mySelId = "-1";
+        this.mySelPlace = this.myPlaces.find(p => p.id === +this.mySelId);
+
      }
+
+    onSelectedPlaceChanged(event: any) {
+        if (this.mySelId != null && this.mySelId !== undefined) {
+            this.mySelPlace = this.myPlaces.find(o => o.id === +this.mySelId);
+        }
+    }
 
     private loadPlanets() {
         this.placesService.getPlanets().toPromise().then((places:Place[]) => {
             this.planets = places; 
+            this.myPlaces = places;
             // this.loading = false;
             this.selectPlaceFromRoute();
         });        

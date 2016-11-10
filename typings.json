@@ -6,5 +6,6 @@
 	},
 	"globalDevDependencies": {
 		"jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#26c98c8a9530c44f8c801ccc3b2057e2101187ee"
+		, "hammerjs": "github:DefinitelyTyped/DefinitelyTyped/hammerjs/hammerjs.d.ts#b8de53efe8604e1ca3e4c52fd9994df303214e88" 
 	}
 }
