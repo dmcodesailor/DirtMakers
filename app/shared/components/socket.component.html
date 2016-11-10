@@ -1,0 +1,10 @@
+<div>
+    <div style="max-height: 50px; overflow-y: auto;">
+        <ul>
+            <li *ngFor="let msg of messages;">
+                {{msg}}
+            </li>
+        </ul>
+    </div>
+    <button type="button" md-raised-button color="primary" (click)="send()" >Save</button>
+</div>

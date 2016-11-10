@@ -15,6 +15,7 @@ import { DataEditorHabHygComponent }    from '../app/data-editor-habhyg/data-edi
 import { HabHygDetailComponent }        from '../app/habhyg-detail/habhyg-detail.component';
 import { PlacesModule }                 from '../app/places/places.module';
 import { AuthService }                  from './shared/services/auth.service';
+import { SocketComponent }              from './shared/components/socket.component';
 
 @NgModule({
   imports:[ 
@@ -32,6 +33,7 @@ import { AuthService }                  from './shared/services/auth.service';
                     , HabHygDetailComponent
                     , LoginComponent
                     , LogoutComponent
+                    , SocketComponent
                   ]
   , exports: [
                 BrowserModule
