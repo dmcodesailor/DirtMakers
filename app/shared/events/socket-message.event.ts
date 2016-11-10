@@ -6,7 +6,7 @@ export class SocketMessageEventEmitter {
     constructor () {
     }
     public raise(value:any) {
-        console.log(value);
+        // console.log(value);
         this.socketMessageEventSubj.next(value);
     }
 }

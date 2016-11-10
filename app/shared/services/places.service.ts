@@ -18,9 +18,9 @@ export class PlacesService {
 
     }
 
-          private url():string {
+    private url():string {
          return this.config.baseApiUrl() + "Places/";
-     }
+    }
 
 
     public getPlaceTypes():Observable<PlaceType[]> {

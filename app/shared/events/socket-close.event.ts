@@ -5,7 +5,7 @@ export class SocketCloseEventEmitter {
     public socketCloseEvent = this.socketCloseEventSubj.asObservable();
     constructor () {
     }
-    public raise(value:any) {
+    public raise(value:__SockJSClient.OpenEvent) {
         console.log(value);
         this.socketCloseEventSubj.next(value);
     }

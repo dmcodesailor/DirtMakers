@@ -1,30 +1,42 @@
-import { Injectable } from '@angular/core';
+import { Injectable }               from '@angular/core';
 // sudo typings install dt~sockjs-client --global
 // sudo typings info dt~sockjs-client --versions
-import SockJS                  from 'sockjs-client';
+import SockJS                       from 'sockjs-client';
 import BaseEvent                    = __SockJSClient.BaseEvent;
 import SockJSClass                  = __SockJSClient.SockJSClass;
 import { Subject }                  from 'rxjs/Subject';
+import { SocketOpenEventEmitter }   from '../events/socket-open.event';
+import { SocketMessageEventEmitter }from '../events/socket-message.event';
+import { SocketCloseEventEmitter }  from '../events/socket-close.event';
 
 @Injectable() 
 export class SocketService {
-    private sock:SockJSClass;// = SockJS ("http://localhost:9999/echo", null, {});
-    private openEventSubj = new Subject<any>();
-    private messageEventSubj = new Subject<any>();
-    private closeEventSubj = new Subject<any>();
-  
-    public openEvent;// = this.openEventSubj.asObservable();
-    public messageEvent;// = this.messageEventSubj.asObservable();
-    public closeEvent;// = this.closeEventSubj.asObservable();
+    private sock:SockJSClass;
+    private autoConnect:boolean = true;
+    private retryInterval;
+    private reconnecting:boolean = false;
+
+    public connected:boolean = false;
+    public openEvent:SocketOpenEventEmitter = new SocketOpenEventEmitter();
+    public messageEvent:SocketMessageEventEmitter = new SocketMessageEventEmitter();
+    public closeEvent:SocketCloseEventEmitter = new SocketCloseEventEmitter();
 
     constructor() {
-        this.openEvent = this.openEventSubj.asObservable();
-        this.messageEvent = this.messageEventSubj.asObservable();
-        this.closeEvent = this.closeEventSubj.asObservable();
-        this.sock = SockJS("http://localhost:9999/echo", null, {});
-        this.sock.onopen = this.onOpen;
-        this.sock.onmessage = this.onMessage;
-        this.sock.onclose = this.onClose;
+        this.connect();
+    }
+
+    public connect () {
+        if (this.connected === false) {
+            try {
+                console.log("Connecting...");
+                this.sock = SockJS("http://localhost:9999/echo", null, {});
+                this.sock.onopen = (oe) => {this.onOpen(oe);};
+                this.sock.onclose = (ce) => {this.onClose(ce);};
+            } catch (ex) {
+                console.log("connect-exception: " + ex);
+                clearInterval(this.retryInterval);
+            }
+        }
     }
 
     public send(message:any) {
@@ -32,42 +44,49 @@ export class SocketService {
     }
 
     private onOpen(oe:__SockJSClient.OpenEvent) {
-        console.log(oe);
-        try {
-            if (this.openEventSubj === undefined) {
-                this.openEventSubj = new Subject<any>();
-                this.openEvent = this.openEventSubj.asObservable();
+        if (this.sock.readyState === 1) {
+            this.sock.onmessage = (me) => {this.onMessage(me);};
+            this.connected = true;
+            clearInterval(this.retryInterval);
+            this.reconnecting = false;
+            try {
+                this.openEvent.raise(oe);
+            } catch (ex) {
+                console.log(ex);
             }
-            this.openEventSubj.next(oe);
-        } catch (ex) {
-            console.log(ex);
         }
     }  
 
     private onMessage(me:__SockJSClient.MessageEvent) {
-        console.log("onMessage " + me.data.toString());
+        let messageObject = JSON.parse(me.data.toString());
         try {
-            if (this.messageEventSubj === undefined) {
-                this.messageEventSubj = new Subject<any>();
-                this.messageEvent = this.messageEventSubj.asObservable();
-            }
-            this.messageEventSubj.next(me);
+            this.messageEvent.raise(me);
         } catch (ex) {
             console.log(ex);
         }
     }
 
     private onClose(ce:__SockJSClient.CloseEvent) {
-        console.log("closed");
+        let v = "onClose (null)";
+        if (this.sock !== null) {
+            v = "onClose " + this.sock.readyState;
+        }
+        console.log(v);
+        this.sock = null;
+        this.connected = false;
         try {
-            if (this.closeEventSubj === undefined) {
-                this.closeEventSubj = new Subject<any>();
-                this.closeEvent = this.closeEventSubj.asObservable();
-            }
-            this.closeEventSubj.next(ce);
+            // if (this.sock.readyState === 3) {
+                // console.log("onClose (3)");
+                // Poll for the connection if the flag is set.
+                if (this.autoConnect === true && this.reconnecting === false) {
+                    this.closeEvent.raise(ce);
+                    console.log("reconnecting...");
+                    this.reconnecting = true;
+                    this.retryInterval = setInterval(() => this.connect() , 5000 );
+                }
+            // }
         } catch(ex) {
-            console.log(ex);
+            console.log("onClose-Exception: " + ex);
         }
     }
-
 }

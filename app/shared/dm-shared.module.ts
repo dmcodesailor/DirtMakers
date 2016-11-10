@@ -26,6 +26,7 @@ import { DialogComponent }              from './components/dialog.component';
 import { AffiliationService }           from './services/affiliation.service';
 import { ConfigService }                from './services/config.service';
 import { PlacesService }                from './services/places.service';
+import { SocketService }                from './services/socket.service';
 
 @NgModule({
   imports:        [ 
@@ -67,6 +68,7 @@ import { PlacesService }                from './services/places.service';
                     AffiliationService
                     , ConfigService
                     , PlacesService
+                    , SocketService
                   ]
 })
 export class DmSharedModule { }
